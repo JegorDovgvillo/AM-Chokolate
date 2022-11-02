@@ -1,0 +1,332 @@
+html {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1440px;
+    min-width: 375px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    height: 100%;
+    min-height: 100%;
+}
+/*Хэдер*/
+.header__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid 2px #198d9b;
+    margin-right: 92px;
+    padding-right: 31px;
+}
+.header__list-item:hover a {
+    color: #198d9b;
+    transition: all 0.7s ease-in-out;
+}
+img[src*="корзина(черн)"] {
+    margin-bottom: 29px;
+}
+.header__list-item a {
+    text-decoration: none;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #121011;
+}
+.header {
+    width: 1440px;
+    padding-left: 130px;
+    position: fixed;
+    display: flex;
+    background-color: #f8f4f0;
+    align-items: center;
+    z-index: 10;
+    flex-direction: row;
+}
+.header__list-item {
+    margin-bottom: 21px;
+}
+.header .logo {
+    margin-right: 65px;
+}
+.logo:hover path {
+    fill: #198d9b;
+    transition: all 0.7s ease-in-out;
+}
+.header__list-item:first-child {
+    padding-left: 32px;
+}
+.header__list-item:not(.header__list-item:first-child) {
+    margin-left: 44px;
+}
+.numberOfPosition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #198d9b;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    top: -47px;
+    right: -9px;
+    text-align: center;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 10px;
+    color: #ffffff;
+}
+/*burger*/
+.wrapper {
+    display: none;
+}
+.burger {
+    position: relative;
+    width: 100%;
+    z-index: 50;
+}
+.burger:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+.burger__conteiner {
+    max-width: 1180px;
+    margin: 0px auto;
+    padding: 0px 10px;
+}
+.burger__body {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: 80px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.burger__cross {
+    display: none;
+}
+.burger__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.burger__list li {
+    z-index: 4;
+    margin: 0 0 0 20px;
+    list-style: none;
+}
+.noscroll {
+    overflow-y: hidden;
+}
+/*Навигация*/
+.navigation {
+    display: flex;
+    flex-direction: column;
+    margin-top: 160px;
+}
+/*хлебные крошки*/
+.breadcrumb {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin-bottom: 35px;
+    list-style: none;
+    background-color: transparent;
+    border-radius: 0;
+}
+.breadcrumb__list {
+    display: flex;
+}
+.breadcrumb__list-item:not(.breadcrumb__list-item:last-child)::after {
+    content: " /";
+}
+.breadcrumb__list-item a {
+    text-decoration: none;
+    margin-right: 3px;
+}
+.breadcrumb__list-item {
+    margin-right: 3px;
+}
+.breadcrumb__list-item span {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #121011;
+}
+/*Доставка*/
+.catalog {
+    flex: 1 0 auto;
+    padding: 0 130px 110px;
+    background-color: #f8f4f0;
+    overflow: hidden;
+}
+h1 {
+    font-family: "Arkhip";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    color: #121011;
+    margin-bottom: 30px;
+}
+h2 {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 35px;
+    color: #121011;
+    margin-bottom: 40px;
+}
+h3 {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: #121011;
+    margin-bottom: 40px;
+}
+h5 {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 10px;
+}
+.delivery__min-payment {
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+.delivery ul {
+    list-style: decimal;
+    margin-left: 40px;
+    margin-bottom: 40px;
+}
+.delivery li {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #121011;
+}
+.delivery p {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+    margin-left: 24px;
+    margin-bottom: 40px;
+}
+.technical {
+    width: 41px;
+    height: 42px;
+    position: relative;
+    right: 10px;
+    background-color: #f8f4f0;
+}
+.delivery a {
+    text-decoration: none;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: #121011;
+    border: solid 4px #198d9b;
+    padding: 20px 29px;
+}
+/* футер*/
+.footer {
+    display: flex;
+    background-color: #fdfcfb;
+    height: 305px;
+}
+.footer__contacts {
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+}
+.footer__list-item a {
+    text-decoration: none;
+    font-family: "Gilroy";
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #121011;
+}
+
+.address {
+    font-family: "Gilroy";
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 29px;
+    color: #121011;
+}
+.footer__list-item:hover a {
+    color: #198d9b;
+    transition: all 0.7s ease-in-out;
+}
+.address:hover {
+    color: #198d9b;
+    transition: all 0.7s ease-in-out;
+    cursor: pointer;
+}
+.telephone {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: #121011;
+    margin-bottom: 27px;
+}
+.footer__logo {
+    margin-left: 130px;
+    margin-top: 55px;
+}
+.footer__info {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-top: 63px;
+}
+.footer__list-item {
+    margin-bottom: 18px;
+}
+.telegram:hover path,
+.mail:hover path,
+.instagram:hover path {
+    transition: all 0.7s ease-in-out;
+    stroke: #198d9b;
+}
+.footer__contacts a {
+    text-decoration: none;
+    margin-bottom: 27px;
+}
