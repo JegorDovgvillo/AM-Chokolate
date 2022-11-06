@@ -121,7 +121,7 @@
         transition: all 0.7s ease-in-out;
     }
     .burger__menu.active {
-        top: 140px;
+        top: 136px;
         height: 100%;
     }
     .burger__list {
@@ -161,6 +161,16 @@
     }
 
     /*body*/
+    .basket__ordering {
+        align-items: flex-start;
+    }
+    .basket__ordering-price {
+        border-bottom: none;
+    }
+    p.delivery {
+        border-bottom: none;
+        padding-left: 0px;
+    }
     /*footer*/
     .footer__logo img {
         width: 100px;
@@ -218,6 +228,32 @@
     }
     /*footer*/
 }
+@media only all and (max-width: 650px) {
+    .delivery__text {
+        padding: 0px 50px 0px 50px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    img {
+        width: 600px;
+    }
+    h1 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        line-height: 1;
+    }
+    p {
+        font-size: 16px;
+    }
+    .gratitude a {
+        padding: 14px 14px;
+        font-size: 16px;
+    }
+}
+
 @media only all and (max-width: 565px) {
     .navigation h1 {
         padding-right: 110px;
@@ -266,6 +302,13 @@
     }
     .total-sum {
         align-items: baseline;
+    }
+    .basket__ordering-value-all {
+        padding-left: 30px;
+        font-size: 35px;
+    }
+    .basket__ordering-value-all {
+        font-size: 35px;
     }
 }
 @media only all and (max-width: 490px) {

@@ -621,3 +621,63 @@ li option {
     text-decoration: none;
     margin-bottom: 27px;
 }
+.gratitude {
+    overflow: hidden;
+    max-width: 1205px;
+    height: 805px;
+    min-width: 375px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('./images/фон.png');
+    background-position: center;
+    margin-top: 200px;
+}
+.gratitude .technical {
+    width: 41px;
+    height: 42px;
+    position: relative;
+    left: -10px;
+    background-color: #efefef;
+    top: 0;
+}
+.gratitude a {
+    text-decoration: none;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: #121011;
+    border: solid 4px #198d9b;
+    padding: 20px 29px;
+}
+.gratitude h1 {
+    text-align: center;
+    font-family: "Arkhip";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 42px;
+    color: #121011;
+    margin-bottom: 27px;
+}
+.gratitude p {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #121011;
+}
+.gratitude .delivery__text {
+    padding: 0px 100px 0px 100px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

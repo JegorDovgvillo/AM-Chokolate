@@ -117,7 +117,7 @@
         transition: all 0.7s ease-in-out;
     }
     .burger__menu.active {
-        top: 140px;
+        top: 136px;
         height: 100%;
     }
     .burger__list {

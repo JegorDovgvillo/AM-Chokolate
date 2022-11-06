@@ -159,7 +159,7 @@
         transition: all 0.7s ease-in-out;
     }
     .burger__menu.active {
-        top: 140px;
+        top: 136px;
         height: 100%;
     }
     .burger__list {
@@ -426,13 +426,13 @@
 }
 @media only all and (max-width: 470px) {
     .active-first-item {
-        right: 455px;
+        right: 410px;
     }
     .active-second-item {
-        right: 900px;
+        right: 795px;
     }
     .active-third-item {
-        right: 1350px;
+        right: 1180px;
     }
 }
 @media only all and (max-width: 420px) {

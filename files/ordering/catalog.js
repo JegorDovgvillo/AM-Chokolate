@@ -78,6 +78,7 @@ const inputDeliveryFirst = document.getElementsByClassName('pickup')[0],
 result.innerHTML = forAllPositions.innerHTML
 inputDeliveryFirst.onclick = pickupBlock;
 function pickupBlock() {
+    inputDeliverySecond.removeAttribute('disabled')
     const deliveryParagraph = document.getElementsByClassName('delivery')[0]
     if (inputDeliveryFirst.checked) {
         deliveryAddress.innerHTML = `<li">
@@ -86,7 +87,7 @@ function pickupBlock() {
         <option value="г. Минск, ул. Немига, д. 3" >г. Минск, ул. Немига, д. 3</option>
         <option value="п. Солнечный,  ул. Сосновая, д. 2 ">п. Солнечный,  ул. Сосновая, д. 2 </option>
         </select>
-    </li>`
+    </li>`;
         payment.innerHTML = 'Оплата при получении'
         payment.setAttribute('value', 'При получении')
         readyTime.innerHTML = '4.забрать заказ '
@@ -124,6 +125,7 @@ function deliveryBlock() {
         `)
         const delivery = document.getElementsByClassName('delivery-value')[0]
         result.innerHTML = parseInt(delivery.innerHTML) + parseInt(forAllPositions.innerHTML)
+        inputDeliverySecond.setAttribute('disabled','disabled')
     }
 }
 const inputName = document.getElementsByClassName('name')[0],
@@ -136,7 +138,6 @@ const inputName = document.getElementsByClassName('name')[0],
 inputName.onkeyup = validationFormName;
 function validationFormName() {
     if (name.test(inputName.value)) {
-        inputName.style.color = 'green'
         bbb.removeAttribute('disabled')
     }
     else {
@@ -147,7 +148,6 @@ function validationFormName() {
 inputTel.onkeyup = validationFormTel;
 function validationFormTel() {
     if (tel.test(inputTel.value)) {
-        inputTel.style.color = 'green'
         bbb.removeAttribute('disabled')
     }
     else {
@@ -158,7 +158,6 @@ function validationFormTel() {
 inputMail.onkeyup = validationFormMail;
 function validationFormMail() {
     if (mail.test(inputMail.value)) {
-        inputMail.style.color = 'green'
         bbb.removeAttribute('disabled')
     }
     else {
@@ -185,6 +184,7 @@ ${parseInt(itemUnits.slice(1, 5)) == 100 ? 'гр.' : 'шт.'} / ${grandTotal}byn
 
 
 }
+const catalog = document.getElementsByClassName('catalog')[0]
 formElem.onsubmit = async (e) => {
     e.preventDefault();
 
@@ -192,8 +192,22 @@ formElem.onsubmit = async (e) => {
         method: 'POST',
         body: new FormData(formElem)
     });
-    window.location.href = 'http://127.0.0.1:5501/gratitude/main.html'
+    
     localStorage.clear()
+    catalog.style.display = 'block'
+    catalog.innerHTML = `<div class="gratitude">
+    <div class="delivery__text">
+        <h1>БЛАГОДАРИМ ЗА ЗАКАЗ</h1>
+        <p>
+            Спасибо что выбрали нас!<br>
+            Мы свяжемся с вами для уточнения деталей заказа.
+        </p>
+        <div>
+            <div class="technical"></div>
+            <a href="../Catalog-main/catalog-main.html">Вернуться в каталог</a>
+        </div>
+    </div>
+</div>`
 };
 
 

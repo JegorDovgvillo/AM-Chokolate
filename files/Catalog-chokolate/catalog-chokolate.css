@@ -559,10 +559,10 @@ img[src*="корзина(черн)"] {
     right: 425px;
 }
 .active-second-item {
-    right: 840px;
+    right: 795px;
 }
 .active-third-item {
-    right: 1270px;
+    right: 1180px;
 }
 .scroll-buttons__arrow-back:disabled {
     opacity: 0.3;

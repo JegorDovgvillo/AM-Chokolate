@@ -157,7 +157,7 @@
         transition: all 0.7s ease-in-out;
     }
     .burger__menu.active {
-        top: 140px;
+        top: 136px;
         height: 100%;
     }
     .burger__list {
@@ -279,6 +279,9 @@
     .header {
         align-items: center;
     }
+    .header .logo {
+        width: 100px;
+    }
     /*navigation*/
     .selections {
         top: 210px;
@@ -370,13 +373,13 @@
 }
 @media only all and (max-width: 470px) {
     .active-first-item {
-        right: 455px;
+        right: 410px;
     }
     .active-second-item {
-        right: 900px;
+        right: 795px;
     }
     .active-third-item {
-        right: 1350px;
+        right: 1180px;
     }
 }
 @media only all and (max-width: 420px) {
@@ -408,7 +411,7 @@
         padding: 0 20px;
     }
     .catalog__popular .catalog__body-shell .catalog__body-item {
-        padding: 0px 20px 0px 20px;
+        margin: 0px 20px 0px 0px;
     }
     .scroll-buttons {
         margin-right: 30px;
