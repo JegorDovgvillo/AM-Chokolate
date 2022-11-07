@@ -2,9 +2,9 @@
 const burgerCross = document.getElementsByClassName('burger__cross')[0],
     burgerMenu = document.getElementsByClassName('burger__menu')[0];
 burgerCross.onclick = ((el) => {
-    burgerCross.classList.toggle('active'),
-        burgerMenu.classList.toggle('active')
-    document.body.classList.toggle('noscroll')
+    burgerCross.classList.toggle('active');
+        burgerMenu.classList.toggle('active');
+    document.body.classList.toggle('noscroll');
 });
 const popularBlock = document.getElementsByClassName('catalog__popular')[0],
     firstPage = document.getElementsByClassName('scroll-buttons__first')[0],
@@ -20,64 +20,64 @@ secondPage.onclick = scrollNext;
 scrollButtonBack.setAttribute("disabled", "disabled");
 function scrollNext(el) {
     if (firstPage.classList.contains('active')) {
-        popularBlock.classList.toggle('active')
-        secondPage.classList.add('active')
-        firstPage.classList.remove('active')
-        scrollButtonNext.setAttribute("disabled", "disabled")
+        popularBlock.classList.toggle('active');
+        secondPage.classList.add('active');
+        firstPage.classList.remove('active');
+        scrollButtonNext.setAttribute("disabled", "disabled");
     }
 }
 function scrollBack(el) {
     if (secondPage.classList.contains('active')) {
-        popularBlock.classList.remove('active')
-        firstPage.classList.add('active')
-        secondPage.classList.remove('active')
-        scrollButtonNext.removeAttribute("disabled")
+        popularBlock.classList.remove('active');
+        firstPage.classList.add('active');
+        secondPage.classList.remove('active');
+        scrollButtonNext.removeAttribute("disabled");
     }
 }
 function scrolOnArrowBack(el) {
     if (currentPageNumber.innerHTML == '2') {
-        --currentPageNumber.innerHTML
-        popularBlock.classList.remove('active')
-        popularBlock.classList.remove('active-first-item')
-        scrollButtonBack.setAttribute("disabled", "disabled")
+        --currentPageNumber.innerHTML;
+        popularBlock.classList.remove('active');
+        popularBlock.classList.remove('active-first-item');
+        scrollButtonBack.setAttribute("disabled", "disabled");
     } else if (currentPageNumber.innerHTML == '3') {
-        --currentPageNumber.innerHTML
-        popularBlock.classList.toggle('active-first-item')
-        popularBlock.classList.remove('active-second-item')
+        --currentPageNumber.innerHTML;
+        popularBlock.classList.toggle('active-first-item');
+        popularBlock.classList.remove('active-second-item');
     } else if (currentPageNumber.innerHTML == '4') {
-        --currentPageNumber.innerHTML
-        popularBlock.classList.toggle('active-second-item')
-        popularBlock.classList.remove('active-third-item')
+        --currentPageNumber.innerHTML;
+        popularBlock.classList.toggle('active-second-item');
+        popularBlock.classList.remove('active-third-item');
     }
-    scrollButtonNext.removeAttribute("disabled")
+    scrollButtonNext.removeAttribute("disabled");
 }
 function scrolOnArrowNext(el) {
-    scrollNext()
+    scrollNext();
     if (window.getComputedStyle(firstPage).display == 'none') {
-        scrollButtonNext.removeAttribute("disabled")
+        scrollButtonNext.removeAttribute("disabled");
 
         if (currentPageNumber.innerHTML == '1') {
-            ++currentPageNumber.innerHTML
-            popularBlock.classList.remove('active')
-            popularBlock.classList.toggle('active-first-item')
+            ++currentPageNumber.innerHTML;
+            popularBlock.classList.remove('active');
+            popularBlock.classList.toggle('active-first-item');
         } else if (currentPageNumber.innerHTML == '2') {
-            ++currentPageNumber.innerHTML
-            popularBlock.classList.remove('active-first-item')
-            popularBlock.classList.toggle('active-second-item')
+            ++currentPageNumber.innerHTML;
+            popularBlock.classList.remove('active-first-item');
+            popularBlock.classList.toggle('active-second-item');
         } else if (currentPageNumber.innerHTML == '3') {
-            ++currentPageNumber.innerHTML
-            popularBlock.classList.remove('active-second-item')
-            popularBlock.classList.toggle('active-third-item')
+            ++currentPageNumber.innerHTML;
+            popularBlock.classList.remove('active-second-item');
+            popularBlock.classList.toggle('active-third-item');
         }
         if (currentPageNumber.innerHTML == allPageNumber.innerHTML) {
-            scrollButtonNext.setAttribute("disabled", "disabled")
+            scrollButtonNext.setAttribute("disabled", "disabled");
         }
     }
-    scrollButtonBack.removeAttribute("disabled")
+    scrollButtonBack.removeAttribute("disabled");
 }
-const bodyItemShell = document.querySelectorAll('.catalog__body-shell')
+const bodyItemShell = document.querySelectorAll('.catalog__body-shell');
 bodyItemShell.forEach(item => {
-    const imgOnClick = item.querySelector('.imageOnClick')
+    const imgOnClick = item.querySelector('.imageOnClick');
     imgOnClick.addEventListener('click', () => {
         const bodyItem = item.querySelector('.catalog__body-item'),
             itemsInfo = item.querySelector('.items-info'),
@@ -94,8 +94,8 @@ bodyItemShell.forEach(item => {
         itemTitle.style.paddingLeft = '45px';
         item.classList.add('activeBodyShell');
         cross.classList.add('activeCross');
-    })
-    const cross = item.querySelector('.cross')
+    });
+    const cross = item.querySelector('.cross');
     cross.addEventListener('click', () => {
         const bodyItem = item.querySelector('.catalog__body-item'),
             itemsInfo = item.querySelector('.items-info'),
@@ -112,8 +112,8 @@ bodyItemShell.forEach(item => {
         itemTitle.style.paddingLeft = '0px';
         item.classList.toggle('activeBodyShell');
         cross.classList.toggle('activeCross');
-    })
-})
+    });
+});
 
 const triangleOnClick = document.getElementsByClassName('triangle')[0],
     catalogTitle = document.getElementsByClassName('catalog__title')[0],
@@ -121,17 +121,17 @@ const triangleOnClick = document.getElementsByClassName('triangle')[0],
     selectionsItem = selections.getElementsByClassName('selections__item');
 triangleOnClick.onclick = viewAll;
 function viewAll() {
-    triangleOnClick.classList.toggle('activeTriangle')
-    selections.classList.toggle('activeSelections')
+    triangleOnClick.classList.toggle('activeTriangle');
+    selections.classList.toggle('activeSelections');
     for (let i of selectionsItem) {
         if (i.innerHTML.toLowerCase() == catalogTitle.innerHTML.toLowerCase()) {
-            i.style.color = '#198d9b'
+            i.style.color = '#198d9b';
         }
     }
 }
 
-const numberOfPosition = document.getElementsByClassName('numberOfPosition')[0]
-numberOfPosition.innerHTML = localStorage.length
+const numberOfPosition = document.getElementsByClassName('numberOfPosition')[0];
+numberOfPosition.innerHTML = localStorage.length;
 bodyItemShell.forEach(item => {
     const plus = item.querySelector('.plus'),
         amount = item.querySelector('.amount'),
@@ -141,36 +141,36 @@ bodyItemShell.forEach(item => {
         value = item.querySelector('.value'),
         title = item.querySelector('h3'),
         minus = item.querySelector('.minus');
-    minus.setAttribute("disabled", "disabled")
+    minus.setAttribute("disabled", "disabled");
     plus.addEventListener('click', () => {
-        ++amount.innerHTML
+        ++amount.innerHTML;
         if (+amount.innerHTML > 1) {
-            minus.removeAttribute("disabled")
+            minus.removeAttribute("disabled");
         }
-    })
+    });
     minus.addEventListener('click', () => {
-        --amount.innerHTML
+        --amount.innerHTML;
         if (+amount.innerHTML == 1) {
-            minus.setAttribute("disabled", "disabled")
+            minus.setAttribute("disabled", "disabled");
         }
-    })
+    });
     basketForDesktop.addEventListener('click', () => {
-        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML]))
-        location.reload()
-        numberOfPosition.style.display = 'flex'
-    })
+        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML]));
+        location.reload();
+        numberOfPosition.style.display = 'flex';
+    });
     basketForOther.addEventListener('click', () => {
-        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML]))
-        location.reload()
-    })
+        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML]));
+        location.reload();
+    });
 
-})
+});
 const headerItem = document.getElementsByClassName('link'),
     breadcrumbItem = document.getElementsByClassName('item-element');
 for (let link of headerItem) {
     for (let breadcrumb of breadcrumbItem) {
         if (link.innerText.toLowerCase() == breadcrumb.innerText.toLowerCase()) {
-            link.style.color = '#198d9b'
+            link.style.color = '#198d9b';
         }
     }
 }
