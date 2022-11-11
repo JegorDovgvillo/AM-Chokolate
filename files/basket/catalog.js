@@ -3,8 +3,8 @@ const burgerCross = document.getElementsByClassName('burger__cross')[0],
     burgerMenu = document.getElementsByClassName('burger__menu')[0];
 burgerCross.onclick = ((el) => {
     burgerCross.classList.toggle('active');
-        burgerMenu.classList.toggle('active');
-        document.body.classList.toggle('noscroll');
+    burgerMenu.classList.toggle('active');
+    document.body.classList.toggle('noscroll');
 });
 const headerItem = document.getElementsByClassName('link'),
     breadcrumbItem = document.getElementsByTagName('span');
@@ -23,7 +23,7 @@ for (let links of listItems) {
         }
     }
 }
-const numberOfPosition = document.getElementsByClassName('numberOfPosition')[0];
+const numberOfPosition = document.getElementsByClassName('number-of-position')[0];
 numberOfPosition.innerHTML = localStorage.length;
 
 const basket = document.getElementsByClassName('basket')[0];
@@ -54,7 +54,7 @@ for (let i = 0; i < localStorage.length; i++) {
                 <input type="button" class="plus" value="+">
             </div>
             <div class="total-sum">
-                <img class="items-info__cross" src="./images/крестик.png">
+                <img class="items-info__cross" src="/images/крестик.png">
                 <div>
                     <span class="sum">${grandTotal}</span>
                     <span class="valuta">Byn</span>
@@ -116,10 +116,10 @@ basketItem.forEach(item => {
 
 if (forAllPositions.innerHTML == 0) {
     orderButton.innerHTML = 'ПЕРЕЙТИ В КАТАЛОГ';
+    orderButton.setAttribute('href', '../catalog-main/catalog-main.html');
     orderButton.style.alignItems = 'flex-start';
     orderingPrice.remove();
     basketOrdering.style.marginTop = '80px';
-    technicalBlock.style.left = '-360px';
     basket.classList.add('empty-basket-button');
     basket.insertAdjacentHTML('afterbegin', `<p class="empty-basket">
     В вашей корзине пока еще нет заказов.</p>`);
@@ -130,9 +130,9 @@ if (forAllPositions.innerHTML == 0) {
                 <div class="catalog__body-item">
                     <div class="catalog__body-header-group">
                         <h3>Абрико2с в белом шоколаде</h3>
-                        <img class="cross" src="./images/крестик.png">
+                        <img class="cross" src="/images/крестик.png">
                     </div>
-                    <img class="imageOnClick productImage" src="./images/тарталетка грецкий орех.png" alt="">
+                    <img class="image-on-click product-image" src="/images/тарталетка грецкий орех.png" alt="">
                     <div class="items-info">
                         <div class="items-info__currency">
                             <span class="value">5</span>
@@ -140,13 +140,13 @@ if (forAllPositions.innerHTML == 0) {
                                 <span class="currency">BYN</span>
                                 <span class="units">(1шт.)</span>
                             </div>
-                            <button class="basket-adaptate"><img src="./images/корзина.svg"></button>
+                            <button class="basket-adaptate"><img src="/images/корзина.svg"></button>
                         </div>
                         <div class="items-info__operation">
                             <input type="button" class="minus" value="-">
                             <span class="amount">1</span>
                             <input type="button" class="plus" value="+">
-                            <button class="basket-desktop"><img src="./images/корзина.svg"></button>
+                            <button class="basket-desktop"><img src="/images/корзина.svg"></button>
                         </div>
                     </div>
                     <div class="items-info__operation-onclick">
@@ -164,9 +164,9 @@ if (forAllPositions.innerHTML == 0) {
                 <div class="catalog__body-item">
                     <div class="catalog__body-header-group">
                         <h3>Абрико2с в белом шоколаде</h3>
-                        <img class="cross" src="./images/крестик.png">
+                        <img class="cross" src="/images/крестик.png">
                     </div>
-                    <img class="imageOnClick productImage" src="./images/тарталетка грецкий орех.png" alt="">
+                    <img class="image-on-click product-image" src="/images/тарталетка грецкий орех.png" alt="">
                     <div class="items-info">
                         <div class="items-info__currency">
                             <span class="value">5</span>
@@ -174,13 +174,13 @@ if (forAllPositions.innerHTML == 0) {
                                 <span class="currency">BYN</span>
                                 <span class="units">(1шт.)</span>
                             </div>
-                            <button class="basket-adaptate"><img src="./images/корзина.svg"></button>
+                            <button class="basket-adaptate"><img src="/images/корзина.svg"></button>
                         </div>
                         <div class="items-info__operation">
                             <input type="button" class="minus" value="-">
                             <span class="amount">1</span>
                             <input type="button" class="plus" value="+">
-                            <button class="basket-desktop"><img src="./images/корзина.svg"></button>
+                            <button class="basket-desktop"><img src="/images/корзина.svg"></button>
                         </div>
                     </div>
                     <div class="items-info__operation-onclick">
@@ -198,9 +198,9 @@ if (forAllPositions.innerHTML == 0) {
                 <div class="catalog__body-item">
                     <div class="catalog__body-header-group">
                         <h3>Абрико2с в белом шоколаде</h3>
-                        <img class="cross" src="./images/крестик.png">
+                        <img class="cross" src="/images/крестик.png">
                     </div>
-                    <img class="imageOnClick productImage" src="./images/тарталетка грецкий орех.png" alt="">
+                    <img class="image-on-click product-image" src="/images/тарталетка грецкий орех.png" alt="">
                     <div class="items-info">
                         <div class="items-info__currency">
                             <span class="value">5</span>
@@ -208,13 +208,13 @@ if (forAllPositions.innerHTML == 0) {
                                 <span class="currency">BYN</span>
                                 <span class="units">(1шт.)</span>
                             </div>
-                            <button class="basket-adaptate"><img src="./images/корзина.svg"></button>
+                            <button class="basket-adaptate"><img src="/images/корзина.svg"></button>
                         </div>
                         <div class="items-info__operation">
                             <input type="button" class="minus" value="-">
                             <span class="amount">1</span>
                             <input type="button" class="plus" value="+">
-                            <button class="basket-desktop"><img src="./images/корзина.svg"></button>
+                            <button class="basket-desktop"><img src="/images/корзина.svg"></button>
                         </div>
                     </div>
                     <div class="items-info__operation-onclick">
@@ -232,9 +232,9 @@ if (forAllPositions.innerHTML == 0) {
                 <div class="catalog__body-item">
                     <div class="catalog__body-header-group">
                         <h3>Абрико2с в белом шоколаде</h3>
-                        <img class="cross" src="./images/крестик.png">
+                        <img class="cross" src="/images/крестик.png">
                     </div>
-                    <img class="imageOnClick productImage" src="./images/тарталетка грецкий орех.png" alt="">
+                    <img class="image-on-click product-image" src="/images/тарталетка грецкий орех.png" alt="">
                     <div class="items-info">
                         <div class="items-info__currency">
                             <span class="value">5</span>
@@ -242,13 +242,13 @@ if (forAllPositions.innerHTML == 0) {
                                 <span class="currency">BYN</span>
                                 <span class="units">(1шт.)</span>
                             </div>
-                            <button class="basket-adaptate"><img src="./images/корзина.svg"></button>
+                            <button class="basket-adaptate"><img src="/images/корзина.svg"></button>
                         </div>
                         <div class="items-info__operation">
                             <input type="button" class="minus" value="-">
                             <span class="amount">1</span>
                             <input type="button" class="plus" value="+">
-                            <button class="basket-desktop"><img src="./images/корзина.svg"></button>
+                            <button class="basket-desktop"><img src="/images/корзина.svg"></button>
                         </div>
                     </div>
                     <div class="items-info__operation-onclick">
@@ -264,16 +264,15 @@ if (forAllPositions.innerHTML == 0) {
             </div>
         </div>
         <div class="scroll-buttons">
-            <button class="scroll-buttons__arrow-back"><img src="./images/стрелка назад.png"></button>
+            <button class="scroll-buttons__arrow-back"><img src="/images/стрелка назад.png"></button>
             <span class="scroll-buttons__position-first">1</span>
             <span class="scroll-buttons__position-separator">/</span>
             <span class="scroll-buttons__position-second">4</span>
             <input type="button" class="scroll-buttons__first active" value="1">
             <input type="button" class="scroll-buttons__second" value="2">
-            <button class="scroll-buttons__arrow"><img src="./images/стрелка.png"></button>
+            <button class="scroll-buttons__arrow"><img src="/images/стрелка.png"></button>
         </div>
     `);
-
     const popularBlock = document.getElementsByClassName('catalog__popular')[0],
         firstPage = document.getElementsByClassName('scroll-buttons__first')[0],
         secondPage = document.getElementsByClassName('scroll-buttons__second')[0],
@@ -282,28 +281,24 @@ if (forAllPositions.innerHTML == 0) {
         allPageNumber = document.getElementsByClassName('scroll-buttons__position-second')[0],
         scrollButtonBack = document.getElementsByClassName('scroll-buttons__arrow-back')[0],
         bodyItemShell = document.querySelectorAll('.catalog__body-shell');
-    scrollButtonNext.onclick = scrolOnArrowNext;
-    scrollButtonBack.onclick = scrolOnArrowBack;
-    firstPage.onclick = scrollBack;
-    secondPage.onclick = scrollNext;
     scrollButtonBack.setAttribute("disabled", "disabled");
-    function scrollNext(el) {
+    const scrollNext = secondPage.onclick = function scrollNext(el) {
         if (firstPage.classList.contains('active')) {
             popularBlock.classList.toggle('active');
             secondPage.classList.add('active');
             firstPage.classList.remove('active');
             scrollButtonNext.setAttribute("disabled", "disabled");
         }
-    }
-    function scrollBack(el) {
+    };
+    firstPage.onclick = function scrollBack(el) {
         if (secondPage.classList.contains('active')) {
             popularBlock.classList.remove('active');
             firstPage.classList.add('active');
             secondPage.classList.remove('active');
             scrollButtonNext.removeAttribute("disabled");
         }
-    }
-    function scrolOnArrowBack(el) {
+    };
+    scrollButtonBack.onclick = function scrolOnArrowBack(el) {
         if (currentPageNumber.innerHTML == '2') {
             --currentPageNumber.innerHTML;
             popularBlock.classList.remove('active');
@@ -319,9 +314,8 @@ if (forAllPositions.innerHTML == 0) {
             popularBlock.classList.remove('active-third-item');
         }
         scrollButtonNext.removeAttribute("disabled");
-    }
-
-    function scrolOnArrowNext(el) {
+    };
+    scrollButtonNext.onclick = function scrolOnArrowNext(el) {
         scrollNext();
         if (window.getComputedStyle(firstPage).display == 'none') {
             scrollButtonNext.removeAttribute("disabled");
@@ -344,15 +338,14 @@ if (forAllPositions.innerHTML == 0) {
             }
         }
         scrollButtonBack.removeAttribute("disabled");
-    }
-
+    };
     bodyItemShell.forEach(item => {
-        const imgOnClick = item.querySelector('.imageOnClick');
+        const imgOnClick = item.querySelector('.image-on-click');
         imgOnClick.addEventListener('click', () => {
             const bodyItem = item.querySelector('.catalog__body-item'),
                 itemsInfo = item.querySelector('.items-info'),
                 itemsInfoOnClick = item.querySelector('.items-info__operation-onclick'),
-                imgOnClick = item.querySelector('.imageOnClick'),
+                imgOnClick = item.querySelector('.image-on-click'),
                 itemTitle = item.querySelector('h3'),
                 cross = item.querySelector('.cross');
             itemsInfoOnClick.classList.add('activeInfo');
@@ -370,7 +363,7 @@ if (forAllPositions.innerHTML == 0) {
             const bodyItem = item.querySelector('.catalog__body-item'),
                 itemsInfo = item.querySelector('.items-info'),
                 itemsInfoOnClick = item.querySelector('.items-info__operation-onclick'),
-                imgOnClick = item.querySelector('.imageOnClick'),
+                imgOnClick = item.querySelector('.image-on-click'),
                 itemTitle = item.querySelector('h3'),
                 cross = item.querySelector('.cross');
             itemsInfoOnClick.classList.toggle('activeInfo');
@@ -416,4 +409,6 @@ if (forAllPositions.innerHTML == 0) {
             location.reload();
         });
     });
+} else {
+    technicalBlock.style.left = '-260px';
 }

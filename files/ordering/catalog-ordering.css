@@ -63,7 +63,7 @@ img[src*="корзина(черн)"] {
 .header__list-item:not(.header__list-item:first-child) {
     margin-left: 44px;
 }
-.numberOfPosition {
+.number-of-position {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -621,6 +621,7 @@ li option {
     text-decoration: none;
     margin-bottom: 27px;
 }
+/*Благодарность*/
 .gratitude {
     overflow: hidden;
     max-width: 1205px;
@@ -630,7 +631,7 @@ li option {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-image: url('./images/фон.png');
+    background-image: url("/images/фон.png");
     background-position: center;
     margin-top: 200px;
 }

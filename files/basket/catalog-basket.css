@@ -63,7 +63,7 @@ img[src*="корзина(черн)"] {
 .header__list-item:not(.header__list-item:first-child) {
     margin-left: 44px;
 }
-.numberOfPosition {
+.number-of-position {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -344,7 +344,7 @@ img[src*="корзина(черн)"] {
     width: 46px;
     height: 42px;
     position: relative;
-    left: -265px;
+    left: -377px;
     background-color: #f8f4f0;
     top: 25px;
 }
@@ -453,7 +453,7 @@ img[src*="корзина(черн)"] {
 .catalog__body-shell .plus {
     margin-right: 59px;
 }
-.catalog__body-shell .productImage {
+.catalog__body-shell .product-image {
     z-index: 2;
     padding: 43px;
     background-color: #e8e3dc;
@@ -531,7 +531,7 @@ img[src*="корзина(черн)"] {
 .catalog__popular .catalog__bodt-shell .catalog__body-item:last-child {
     padding: 0px 0px 0px 38px;
 }
-.productImage {
+.product-image {
     z-index: 2;
     padding: 43px;
     background-color: #e8e3dc;
@@ -663,6 +663,7 @@ img[src*="корзина(черн)"] {
     transition: all 0.7s ease-in-out;
     box-shadow: 122px 51px rgba(59, 58, 58, 0.01), 20px 69px 43px rgba(59, 58, 58, 0.05),
         9px 31px 32px rgba(59, 58, 58, 0.09), 2px 8px 17px rgba(59, 58, 58, 0.1), 0px 0px 0px rgba(59, 58, 58, 0.1);
+    margin-top: 10px;
 }
 .activeInfo {
     display: block;

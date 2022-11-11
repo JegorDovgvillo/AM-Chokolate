@@ -23,7 +23,7 @@ for (let links of listItems) {
         }
     }
 }
-const numberOfPosition = document.getElementsByClassName('numberOfPosition')[0];
+const numberOfPosition = document.getElementsByClassName('number-of-position')[0];
 numberOfPosition.innerHTML = localStorage.length;
 const basket = document.getElementsByClassName('basket')[0];
 
@@ -43,7 +43,7 @@ for (let i = 0; i < localStorage.length; i++) {
         </div>
         <div class="items-info__technical">
             <div class="total-sum">
-                <img class="items-info__cross" src="./images/крестик.png">
+                <img class="items-info__cross" src="/images/крестик.png">
                 <div>
                     <span class="sum">${grandTotal}</span>
                     <span class="valuta">Byn</span>

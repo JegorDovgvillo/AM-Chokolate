@@ -3,7 +3,7 @@ const burgerCross = document.getElementsByClassName('burger__cross')[0],
     burgerMenu = document.getElementsByClassName('burger__menu')[0];
 burgerCross.onclick = ((el) => {
     burgerCross.classList.toggle('active');
-        burgerMenu.classList.toggle('active');
+    burgerMenu.classList.toggle('active');
     document.body.classList.toggle('noscroll');
 });
 const popularBlock = document.getElementsByClassName('catalog__popular')[0],
@@ -77,12 +77,12 @@ function scrolOnArrowNext(el) {
 }
 const bodyItemShell = document.querySelectorAll('.catalog__body-shell');
 bodyItemShell.forEach(item => {
-    const imgOnClick = item.querySelector('.imageOnClick');
+    const imgOnClick = item.querySelector('.image-on-click');
     imgOnClick.addEventListener('click', () => {
         const bodyItem = item.querySelector('.catalog__body-item'),
             itemsInfo = item.querySelector('.items-info'),
             itemsInfoOnClick = item.querySelector('.items-info__operation-onclick'),
-            imgOnClick = item.querySelector('.imageOnClick'),
+            imgOnClick = item.querySelector('.image-on-click'),
             itemTitle = item.querySelector('h3'),
             cross = item.querySelector('.cross');
         itemsInfoOnClick.classList.add('activeInfo');
@@ -100,7 +100,7 @@ bodyItemShell.forEach(item => {
         const bodyItem = item.querySelector('.catalog__body-item'),
             itemsInfo = item.querySelector('.items-info'),
             itemsInfoOnClick = item.querySelector('.items-info__operation-onclick'),
-            imgOnClick = item.querySelector('.imageOnClick'),
+            imgOnClick = item.querySelector('.image-on-click'),
             itemTitle = item.querySelector('h3'),
             cross = item.querySelector('.cross');
         itemsInfoOnClick.classList.toggle('activeInfo');
@@ -130,7 +130,7 @@ function viewAll() {
     }
 }
 
-const numberOfPosition = document.getElementsByClassName('numberOfPosition')[0];
+const numberOfPosition = document.getElementsByClassName('number-of-position')[0];
 numberOfPosition.innerHTML = localStorage.length;
 bodyItemShell.forEach(item => {
     const plus = item.querySelector('.plus'),

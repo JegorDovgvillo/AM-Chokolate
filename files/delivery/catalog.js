@@ -16,5 +16,5 @@ for (let link of headerItem) {
         }
     }
 }
-const numberOfPosition = document.getElementsByClassName('numberOfPosition')[0];
+const numberOfPosition = document.getElementsByClassName('number-of-position')[0];
 numberOfPosition.innerHTML = localStorage.length;

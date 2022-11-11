@@ -3,7 +3,7 @@ const burgerCross = document.getElementsByClassName('burger__cross')[0],
     burgerMenu = document.getElementsByClassName('burger__menu')[0];
 burgerCross.onclick = ((el) => {
     burgerCross.classList.toggle('active');
-        burgerMenu.classList.toggle('active');
+    burgerMenu.classList.toggle('active');
     document.body.classList.toggle('noscroll');
 });
 const headerItem = document.getElementsByClassName('link'),
@@ -24,84 +24,84 @@ for (let link of listItems) {
     }
 }
 const popularBlock = document.getElementsByClassName('catalog__popular')[0],
-        firstPage = document.getElementsByClassName('scroll-buttons__first')[0],
-        secondPage = document.getElementsByClassName('scroll-buttons__second')[0],
-        scrollButtonNext = document.getElementsByClassName('scroll-buttons__arrow')[0],
-        currentPageNumber = document.getElementsByClassName('scroll-buttons__position-first')[0],
-        allPageNumber = document.getElementsByClassName('scroll-buttons__position-second')[0],
-        scrollButtonBack = document.getElementsByClassName('scroll-buttons__arrow-back')[0],
-        bodyItemShell = document.querySelectorAll('.catalog__body-shell');
-    scrollButtonNext.onclick = scrolOnArrowNext;
-    scrollButtonBack.onclick = scrolOnArrowBack;
-    firstPage.onclick = scrollBack;
-    secondPage.onclick = scrollNext;
-    scrollButtonBack.setAttribute("disabled", "disabled");
-    function scrollNext(el) {
-        if (firstPage.classList.contains('active')) {
-            popularBlock.classList.toggle('active');
-            secondPage.classList.add('active');
-            firstPage.classList.remove('active');
+    firstPage = document.getElementsByClassName('scroll-buttons__first')[0],
+    secondPage = document.getElementsByClassName('scroll-buttons__second')[0],
+    scrollButtonNext = document.getElementsByClassName('scroll-buttons__arrow')[0],
+    currentPageNumber = document.getElementsByClassName('scroll-buttons__position-first')[0],
+    allPageNumber = document.getElementsByClassName('scroll-buttons__position-second')[0],
+    scrollButtonBack = document.getElementsByClassName('scroll-buttons__arrow-back')[0],
+    bodyItemShell = document.querySelectorAll('.catalog__body-shell');
+scrollButtonNext.onclick = scrolOnArrowNext;
+scrollButtonBack.onclick = scrolOnArrowBack;
+firstPage.onclick = scrollBack;
+secondPage.onclick = scrollNext;
+scrollButtonBack.setAttribute("disabled", "disabled");
+function scrollNext(el) {
+    if (firstPage.classList.contains('active')) {
+        popularBlock.classList.toggle('active');
+        secondPage.classList.add('active');
+        firstPage.classList.remove('active');
+        scrollButtonNext.setAttribute("disabled", "disabled");
+    }
+}
+function scrollBack(el) {
+    if (secondPage.classList.contains('active')) {
+        popularBlock.classList.remove('active');
+        firstPage.classList.add('active');
+        secondPage.classList.remove('active');
+        scrollButtonNext.removeAttribute("disabled");
+    }
+}
+function scrolOnArrowBack(el) {
+    if (currentPageNumber.innerHTML == '2') {
+        --currentPageNumber.innerHTML;
+        popularBlock.classList.remove('active');
+        popularBlock.classList.remove('active-first-item');
+        scrollButtonBack.setAttribute("disabled", "disabled");
+    } else if (currentPageNumber.innerHTML == '3') {
+        --currentPageNumber.innerHTML;
+        popularBlock.classList.toggle('active-first-item');
+        popularBlock.classList.remove('active-second-item');
+    } else if (currentPageNumber.innerHTML == '4') {
+        --currentPageNumber.innerHTML;
+        popularBlock.classList.toggle('active-second-item');
+        popularBlock.classList.remove('active-third-item');
+    }
+    scrollButtonNext.removeAttribute("disabled");
+}
+
+function scrolOnArrowNext(el) {
+    scrollNext();
+    if (window.getComputedStyle(firstPage).display == 'none') {
+        scrollButtonNext.removeAttribute("disabled");
+
+        if (currentPageNumber.innerHTML == '1') {
+            ++currentPageNumber.innerHTML;
+            popularBlock.classList.remove('active');
+            popularBlock.classList.toggle('active-first-item');
+        } else if (currentPageNumber.innerHTML == '2') {
+            ++currentPageNumber.innerHTML;
+            popularBlock.classList.remove('active-first-item');
+            popularBlock.classList.toggle('active-second-item');
+        } else if (currentPageNumber.innerHTML == '3') {
+            ++currentPageNumber.innerHTML;
+            popularBlock.classList.remove('active-second-item');
+            popularBlock.classList.toggle('active-third-item');
+        }
+        if (currentPageNumber.innerHTML == allPageNumber.innerHTML) {
             scrollButtonNext.setAttribute("disabled", "disabled");
         }
     }
-    function scrollBack(el) {
-        if (secondPage.classList.contains('active')) {
-            popularBlock.classList.remove('active');
-            firstPage.classList.add('active');
-            secondPage.classList.remove('active');
-            scrollButtonNext.removeAttribute("disabled");
-        }
-    }
-    function scrolOnArrowBack(el) {
-        if (currentPageNumber.innerHTML == '2') {
-            --currentPageNumber.innerHTML;
-            popularBlock.classList.remove('active');
-            popularBlock.classList.remove('active-first-item');
-            scrollButtonBack.setAttribute("disabled", "disabled");
-        } else if (currentPageNumber.innerHTML == '3') {
-            --currentPageNumber.innerHTML;
-            popularBlock.classList.toggle('active-first-item');
-            popularBlock.classList.remove('active-second-item');
-        } else if (currentPageNumber.innerHTML == '4') {
-            --currentPageNumber.innerHTML;
-            popularBlock.classList.toggle('active-second-item');
-            popularBlock.classList.remove('active-third-item');
-        }
-        scrollButtonNext.removeAttribute("disabled");
-    }
+    scrollButtonBack.removeAttribute("disabled");
+}
 
-    function scrolOnArrowNext(el) {
-        scrollNext();
-        if (window.getComputedStyle(firstPage).display == 'none') {
-            scrollButtonNext.removeAttribute("disabled");
-
-            if (currentPageNumber.innerHTML == '1') {
-                ++currentPageNumber.innerHTML;
-                popularBlock.classList.remove('active');
-                popularBlock.classList.toggle('active-first-item');
-            } else if (currentPageNumber.innerHTML == '2') {
-                ++currentPageNumber.innerHTML;
-                popularBlock.classList.remove('active-first-item');
-                popularBlock.classList.toggle('active-second-item');
-            } else if (currentPageNumber.innerHTML == '3') {
-                ++currentPageNumber.innerHTML;
-                popularBlock.classList.remove('active-second-item');
-                popularBlock.classList.toggle('active-third-item');
-            }
-            if (currentPageNumber.innerHTML == allPageNumber.innerHTML) {
-                scrollButtonNext.setAttribute("disabled", "disabled");
-            }
-        }
-        scrollButtonBack.removeAttribute("disabled");
-    }
-    
 bodyItemShell.forEach(item => {
-    const imgOnClick = item.querySelector('.imageOnClick');
+    const imgOnClick = item.querySelector('.image-on-click');
     imgOnClick.addEventListener('click', () => {
         const bodyItem = item.querySelector('.catalog__body-item'),
             itemsInfo = item.querySelector('.items-info'),
             itemsInfoOnClick = item.querySelector('.items-info__operation-onclick'),
-            imgOnClick = item.querySelector('.imageOnClick'),
+            imgOnClick = item.querySelector('.image-on-click'),
             itemTitle = item.querySelector('h3'),
             cross = item.querySelector('.cross');
         itemsInfoOnClick.classList.add('activeInfo');
@@ -119,7 +119,7 @@ bodyItemShell.forEach(item => {
         const bodyItem = item.querySelector('.catalog__body-item'),
             itemsInfo = item.querySelector('.items-info'),
             itemsInfoOnClick = item.querySelector('.items-info__operation-onclick'),
-            imgOnClick = item.querySelector('.imageOnClick'),
+            imgOnClick = item.querySelector('.image-on-click'),
             itemTitle = item.querySelector('h3'),
             cross = item.querySelector('.cross');
         itemsInfoOnClick.classList.toggle('activeInfo');
@@ -149,7 +149,7 @@ function viewAll() {
     }
 }
 
-const numberOfPosition = document.getElementsByClassName('numberOfPosition')[0];
+const numberOfPosition = document.getElementsByClassName('number-of-position')[0];
 numberOfPosition.innerHTML = localStorage.length;
 bodyItemShell.forEach(item => {
     const plus = item.querySelector('.plus'),
