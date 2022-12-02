@@ -27,6 +27,9 @@
     .catalog {
         padding: 0 21px 110px;
     }
+    .footer__logo {
+        margin-left: 21px;
+    }
 }
 @media only all and (max-width: 1190px) {
     .catalog__popular.active {
@@ -58,21 +61,23 @@
     }
     img[src*="корзина(черн)"] {
         width: 31px;
-        margin-bottom: 0px;
+        margin-bottom: 7px;
     }
     .header {
+        position: fixed;
         justify-content: center;
         width: 100%;
         padding-left: 0px;
         border-bottom: solid 1px rgba(25, 141, 155, 0.3);
     }
     .number-of-position {
-        top: -16px;
-        right: -20px;
+        top: -32px;
+        right: -18px;
     }
     /*burger*/
     .wrapper {
         display: block;
+        margin-bottom: 15px;
     }
     .burger__body {
         height: 50px;
@@ -158,6 +163,9 @@
         margin-top: 31px;
     }
     /*navigation*/
+    .navigation {
+        margin-top: 160px;
+    }
     .breadcrumb {
         display: none;
     }
@@ -177,7 +185,7 @@
         right: 760px;
     }
     /*footer*/
-    .footer__logo img {
+    .footer__logo svg {
         width: 100px;
     }
     .footer__list {
@@ -211,7 +219,7 @@
 @media only all and (max-width: 790px) {
     /*header*/
     .header {
-        align-items: center;
+        align-items: flex-end;
     }
     .header .logo {
         width: 100px;

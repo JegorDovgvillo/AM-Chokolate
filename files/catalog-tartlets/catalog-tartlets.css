@@ -40,12 +40,12 @@ img[src*="корзина(черн)"] {
 .header {
     width: 1440px;
     padding-left: 130px;
-    position: fixed;
     display: flex;
     background-color: #f8f4f0;
-    align-items: center;
+    align-items: flex-end;
     z-index: 10;
     flex-direction: row;
+    padding-bottom: 10px;
 }
 .header__list-item {
     margin-bottom: 21px;
@@ -69,8 +69,8 @@ img[src*="корзина(черн)"] {
     justify-content: center;
     position: relative;
     background-color: #198d9b;
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
     border-radius: 100%;
     top: -47px;
     right: -9px;
@@ -146,7 +146,7 @@ img[src*="корзина(черн)"] {
 .navigation {
     display: flex;
     flex-direction: column;
-    margin-top: 160px;
+    margin-top: 80px;
 }
 .navigation__sections {
     display: flex;
@@ -518,6 +518,7 @@ img[src*="корзина(черн)"] {
     opacity: 0.3;
 }
 .items-info__operation-onclick p {
+    word-wrap: break-word;
     font-family: "Gilroy";
     font-style: normal;
     font-weight: 400;
@@ -537,6 +538,7 @@ img[src*="корзина(черн)"] {
 }
 .items-info__operation-onclick {
     display: none;
+    width: 358px;
 }
 .activeItem {
     background-color: #e8e3dc;

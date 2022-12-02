@@ -186,7 +186,7 @@ const catalog = document.getElementsByClassName('catalog')[0];
 formElem.onsubmit = async (e) => {
     e.preventDefault();
 
-    let response = await fetch('https://reqres.in/users', {
+    let response = await fetch('#', {
         method: 'POST',
         body: new FormData(formElem)
     });
@@ -209,24 +209,24 @@ formElem.onsubmit = async (e) => {
 };
 
 
-(function () {
-    var xhr = new XMLHttpRequest();
+// (function () {
+//     var xhr = new XMLHttpRequest();
 
-    xhr.open('GET', 'https://reqres.in/api/users?page=2');
+//     xhr.open('GET', '#');
 
-    xhr.send();
-    xhr.onload = function () {
-        var statusType = Math.round(this.status / 100);
+//     xhr.send();
+//     xhr.onload = function () {
+//         var statusType = Math.round(this.status / 100);
 
-        console.log((statusType === 2) ? JSON.parse(this.response).data : this.status);
-        let resultFromServer = JSON.parse(this.response);
-        console.log(resultFromServer);
-    };
-    xhr.onerror = function () {
-        console.error(this.status);
-    };
+//         console.log((statusType === 2) ? JSON.parse(this.response).data : this.status);
+//         let resultFromServer = JSON.parse(this.response);
+//         console.log(resultFromServer);
+//     };
+//     xhr.onerror = function () {
+//         console.error(this.status);
+//     };
 
-    xhr.onloadend = function () {
-        console.log('Запрос завершен');
-    };
-})();
+//     xhr.onloadend = function () {
+//         console.log('Запрос завершен');
+//     };
+// })();
