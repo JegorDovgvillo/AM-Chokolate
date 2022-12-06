@@ -32,13 +32,16 @@ for (let i = 0; i < localStorage.length; i++) {
         amount = localStorage.getItem(key),
         itemAmount = JSON.parse(amount),
         sum = itemAmount,
+        img = sum.pop(),
         itemSum = sum.pop(),
         itemUnits = sum.pop(),
         grandTotal = itemSum * itemAmount;
     basket.insertAdjacentHTML('afterbegin', `
     <div class="basket__item">
+    
     <div class="items-info">
         <div class="items-info__name">
+        ${img}
             <h3>${key}</h3>
         </div>
         <div class="items-info__technical">

@@ -1,38 +1,3 @@
-@font-face {
-  font-family: "Arkhip";
-  src: url("../fonts/Arkhip Regular 400.eot");
-  src: local("☺"), url("../fonts/Arkhip Regular 400.woff") format("woff"),
-    url("../fonts/Arkhip Regular 400.ttf") format("truetype"), url("../fonts/Arkhip Regular 400.svg") format("svg");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Gilroy-Regular";
-  src: url("../fonts/Gilroy-Regular.eot");
-  src: local("☺"), url("../fonts/Gilroy-Regular.woff") format("woff"),
-    url("../fonts/Gilroy-Regular.ttf") format("truetype"), url("../fonts/Gilroy-Regular.svg") format("svg");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  src: url("../fonts/Gilroy-Medium.eot");
-  src: local("☺"), url("../fonts/Gilroy-Medium.woff") format("woff"),
-    url("../fonts/Gilroy-Medium.ttf") format("truetype"), url("../fonts/Gilroy-Medium.svg") format("svg");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Gilroy-UltraLight";
-  src: url("../fonts/Gilroy-UltraLight.eot");
-  src: local("☺"), url("../fonts/Gilroy-UltraLight.woff") format("woff"),
-    url("../fonts/Gilroy-UltraLight.ttf") format("truetype"), url("../fonts/Gilroy-UltraLight.svg") format("svg");
-  font-weight: 200;
-  font-style: normal;
-}
 
 * {
   margin: 0;
@@ -663,7 +628,8 @@ menu .nav-link__menu {
 }
 
 .nav-link__menu:hover {
-  color: #121011 !important;
+  color:#198d9b;
+  transition: all 0.7s ease-in-out;
 }
 
 .menu-card {

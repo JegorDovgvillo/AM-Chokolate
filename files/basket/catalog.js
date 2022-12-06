@@ -33,12 +33,18 @@ for (let i = 0; i < localStorage.length; i++) {
         amount = localStorage.getItem(key),
         itemAmount = JSON.parse(amount),
         sum = itemAmount,
+        img = sum.pop(),
         itemSum = sum.pop(),
         itemUnits = sum.pop(),
         grandTotal = itemSum * itemAmount;
+
     basket.insertAdjacentHTML('afterbegin', `
+
     <div class="basket__item">
     <div class="items-info">
+    <div class="image">
+    ${img}
+    </div>
         <div class="items-info__name">
             <h3>${key}</h3>
             <span class="units">${itemUnits}</span>
@@ -90,6 +96,7 @@ basketItem.forEach(item => {
         cross = item.querySelector('.items-info__cross'),
         value = item.querySelector('.value'),
         units = item.querySelector('.units'),
+        img = item.querySelector('.image'),
         minus = item.querySelector('.minus');
     cross.addEventListener('click', () => {
         item.remove();
@@ -98,7 +105,7 @@ basketItem.forEach(item => {
     });
     plus.addEventListener('click', () => {
         ++amount.innerHTML;
-        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML]));
+        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML, img.innerHTML]));
         location.reload();
         if (+amount.innerHTML > 1) {
             minus.removeAttribute("disabled");
@@ -106,7 +113,7 @@ basketItem.forEach(item => {
     });
     minus.addEventListener('click', () => {
         --amount.innerHTML;
-        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML]));
+        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML, img.innerHTML]));
         location.reload();
         if (+amount.innerHTML == 1) {
             minus.setAttribute("disabled", "disabled");
@@ -129,13 +136,15 @@ if (forAllPositions.innerHTML == 0) {
             <div class="catalog__body-shell">
                 <div class="catalog__body-item">
                     <div class="catalog__body-header-group">
-                        <h3>Абрико2с в белом шоколаде</h3>
+                        <h3>Абрико1с в белом шоколаде</h3>
                         <img class="cross" src="/images/крестик.png">
                     </div>
-                    <img class="image-on-click product-image" src="/images/тарталетка грецкий орех.png" alt="">
+                    <div class="image">
+                        <img class="image-on-click product-image" src="/images/тарталетка грецкий орех.png" alt="">
+                    </div>
                     <div class="items-info">
                         <div class="items-info__currency">
-                            <span class="value">5</span>
+                            <span class="value">25</span>
                             <div class="items-info__apiece">
                                 <span class="currency">BYN</span>
                                 <span class="units">(1шт.)</span>
@@ -163,13 +172,15 @@ if (forAllPositions.innerHTML == 0) {
             <div class="catalog__body-shell">
                 <div class="catalog__body-item">
                     <div class="catalog__body-header-group">
-                        <h3>Абрико2с в белом шоколаде</h3>
+                        <h3>Абрико1с в белом шоколаде</h3>
                         <img class="cross" src="/images/крестик.png">
                     </div>
-                    <img class="image-on-click product-image" src="/images/тарталетка грецкий орех.png" alt="">
+                    <div class="image">
+                        <img class="image-on-click product-image" src="/images/тарталетка грецкий орех.png" alt="">
+                    </div>
                     <div class="items-info">
                         <div class="items-info__currency">
-                            <span class="value">5</span>
+                            <span class="value">25</span>
                             <div class="items-info__apiece">
                                 <span class="currency">BYN</span>
                                 <span class="units">(1шт.)</span>
@@ -197,13 +208,15 @@ if (forAllPositions.innerHTML == 0) {
             <div class="catalog__body-shell">
                 <div class="catalog__body-item">
                     <div class="catalog__body-header-group">
-                        <h3>Абрико2с в белом шоколаде</h3>
+                        <h3>Абрико1с в белом шоколаде</h3>
                         <img class="cross" src="/images/крестик.png">
                     </div>
-                    <img class="image-on-click product-image" src="/images/тарталетка грецкий орех.png" alt="">
+                    <div class="image">
+                        <img class="image-on-click product-image" src="/images/тарталетка грецкий орех.png" alt="">
+                    </div>
                     <div class="items-info">
                         <div class="items-info__currency">
-                            <span class="value">5</span>
+                            <span class="value">25</span>
                             <div class="items-info__apiece">
                                 <span class="currency">BYN</span>
                                 <span class="units">(1шт.)</span>
@@ -231,13 +244,15 @@ if (forAllPositions.innerHTML == 0) {
             <div class="catalog__body-shell">
                 <div class="catalog__body-item">
                     <div class="catalog__body-header-group">
-                        <h3>Абрико2с в белом шоколаде</h3>
+                        <h3>Абрико1с в белом шоколаде</h3>
                         <img class="cross" src="/images/крестик.png">
                     </div>
-                    <img class="image-on-click product-image" src="/images/тарталетка грецкий орех.png" alt="">
+                    <div class="image">
+                        <img class="image-on-click product-image" src="/images/тарталетка грецкий орех.png" alt="">
+                    </div>
                     <div class="items-info">
                         <div class="items-info__currency">
-                            <span class="value">5</span>
+                            <span class="value">25</span>
                             <div class="items-info__apiece">
                                 <span class="currency">BYN</span>
                                 <span class="units">(1шт.)</span>
@@ -385,6 +400,7 @@ if (forAllPositions.innerHTML == 0) {
             basketForOther = item.querySelector('.basket-adaptate'),
             value = item.querySelector('.value'),
             title = item.querySelector('h3'),
+            img = item.querySelector('.image'),
             minus = item.querySelector('.minus');
         minus.setAttribute("disabled", "disabled");
         plus.addEventListener('click', () => {
@@ -400,14 +416,15 @@ if (forAllPositions.innerHTML == 0) {
             }
         });
         basketForDesktop.addEventListener('click', () => {
-            localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML]));
+            localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML, img.innerHTML]));
             location.reload();
             numberOfPosition.style.display = 'flex';
         });
         basketForOther.addEventListener('click', () => {
-            localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML]));
+            localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML, img.innerHTML]));
             location.reload();
         });
+
     });
 } else {
     technicalBlock.style.left = '-260px';

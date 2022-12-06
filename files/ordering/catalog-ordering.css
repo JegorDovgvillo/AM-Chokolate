@@ -385,12 +385,12 @@ form .technical {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding-bottom: 40px;
 }
 .items-info__name {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-basis: 350px;
+    align-items: flex-end;
 }
 .items-info__operation {
     display: flex;
@@ -403,6 +403,7 @@ form .technical {
     flex-basis: 100px;
 }
 .basket__item {
+    padding-bottom: 30px;
     padding-top: 15px;
     border-bottom: solid 1px rgba(25, 141, 155, 0.5);
 }
@@ -550,6 +551,9 @@ p.delivery {
 }
 li option {
     border-bottom: solid 1px black;
+}
+.product-image {
+    width: 100px;
 }
 /* футер*/
 .footer {

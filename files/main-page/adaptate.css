@@ -310,7 +310,7 @@
     }
     .navigation-list-new__active {
         position: absolute;
-        top: 3143px;
+        top: 2955px;
         left: 175px;
         z-index: 5;
         transition: all 1.7s ease-in-out;
@@ -346,7 +346,7 @@
     }
     .navigation-list-menu__active {
         position: absolute;
-        top: 2032px;
+        top: 1880px;
         left: 175px;
         z-index: 5;
         transition: all 1.7s ease-in-out;
@@ -525,6 +525,14 @@
     }
 }
 @media only all and (max-width: 920px) {
+    .navigation-list-menu__active {
+        top: 2142px;
+        left: 175px;
+    }
+    .navigation-list-new__active {
+        top: 3217px;
+        left: 175px;
+    }
     .reviews-card {
         padding-left: 70px;
     }
@@ -581,6 +589,14 @@
     }
 }
 @media only all and (max-width: 790px) {
+    .navigation-list-menu__active {
+        top: 2445px;
+        left: 175px;
+    }
+    .navigation-list-new__active {
+        top: 3470px;
+    left: 175px;
+    }
     .container-fluid-header {
         padding-bottom: 0px;
     }
@@ -713,6 +729,14 @@
     }
 }
 @media only all and (max-width: 600px) {
+    .navigation-list-menu__active {
+        top: 2495px;
+        left: 175px;
+    }
+    .navigation-list-new__active {
+        top: 3520px;
+    left: 175px;
+    }
     .scroll-buttons-reviews {
         display: flex;
         padding: 200px 0 100px 0px;
@@ -733,6 +757,14 @@
     }
 }
 @media only all and (max-width: 520px) {
+    .navigation-list-menu__active {
+        top: 2376px;
+        left: 165px;
+    }
+    .navigation-list-new__active {
+        top: 3350px;
+    left: 165px;
+    }
     .burger__menu.active {
         top: 132px;
         height: 100%;
@@ -936,7 +968,21 @@
         padding-top: 0px;
     }
 }
+@media only all and (max-width: 463px) { 
+    .navigation-list-menu__active {
+        top: 2425px;
+        left: 165px;
+    }
+    .navigation-list-new__active {
+        top: 3373px;
+    left: 165px;
+    }
+}
 @media only all and (max-width: 440px) {
+    .navigation-list-new__active {
+        top: 3400px;
+    left: 165px;
+    }
     .first-card {
         margin-left: 10px;
     }
@@ -945,6 +991,14 @@
     }
 }
 @media only all and (max-width: 420px) {
+    .navigation-list-menu__active {
+        top: 2373px;
+        left: 165px;
+    }
+    .navigation-list-new__active {
+        top: 3318px;
+    left: 165px;
+    }
     .first-card {
         margin-left: 0px;
     }

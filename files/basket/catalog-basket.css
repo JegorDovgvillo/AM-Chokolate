@@ -531,6 +531,21 @@ img[src*="корзина(черн)"] {
 .catalog__popular .catalog__bodt-shell .catalog__body-item:last-child {
     padding: 0px 0px 0px 38px;
 }
+.basket .product-image {
+    width: 100px;
+    z-index: 2;
+    padding: 0px;
+    background-color: #e8e3dc;
+    margin-bottom: 19px;
+}
+.news__image-item-item {
+    width: 100px;
+    z-index: 2;
+    padding: 0px;
+    background-color: #e8e3dc;
+    margin-bottom: 19px;
+    height: 100px;
+}
 .product-image {
     z-index: 2;
     padding: 43px;

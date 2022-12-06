@@ -279,6 +279,7 @@ bodyItem.forEach(item => {
     basketForDesktop = item.querySelector('.basket-desktop'),
     value = item.querySelector('.news__price__text'),
     title = item.querySelector('h2'),
+    img = item.querySelector('.image'),
     minus = item.querySelector('.minus');
   minus.setAttribute("disabled", "disabled");
   plus.addEventListener('click', () => {
@@ -295,7 +296,10 @@ bodyItem.forEach(item => {
   });
   basketForDesktop.addEventListener('click', (e) => {
     e.preventDefault();
-    localStorage.setItem(title.innerHTML, JSON.stringify([amount.value, units.innerHTML, value.innerHTML]));
+    console.log(units.innerHTML)
+    console.log(amount.value)
+    console.log(value.innerHTML)
+    localStorage.setItem(title.innerHTML, JSON.stringify([amount.value, units.innerHTML, value.innerHTML,img.innerHTML]));
     numberOfPosition.style.display = 'flex';
     amount.value = 1;
   });
@@ -417,60 +421,62 @@ function viewChocolateBlock(event) {
     chocolateBlock.classList.add('active-card');
   }
   newBlock.innerHTML = `<div class="d-flex-new justify-content-around">
-<div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" class="news__image">
-  <div class="news__image-one">
+  <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" class="news__image">
+    <div class="news__image-one">
+      <h2 class="news__subtitle">Тарталетка лимон</h2>
+      <div class="image-container">
+        <img src="/images/DSC_4380 2.png" alt="" class="news-main-image" width="420" height="523">
+      </div>
+    </div>
+    <div class="news__image-two">
+      <div class="news__image__slider">
+        <img src="/images/news3.png" alt="" class="news__image-item news-img1" width="86" height="86" />
+        <button class="arrow left-arrow__news" id="show-next-btn">
+          <img class="arrow-back news-arrow-back" src="/images/стрелка назад.png">
+        </button>
+        <div class = "image">
+        <img src="/images/DSC_4380 2.png" alt="" width="135" height="162" class="news__image-item-item news-img2 news-active-img" />
+        </div>
+        <button class="arrow right-arrow__news" id="show-prev-btn">
+          <img class="arrow-next news-arrow-next" src="/images/стрелка.png">
+        </button>
+        <img src="/images/news2.png" alt="" class="news__image-item news-img3" />
+      </div>
+    </div>
+  </div>
+  <div data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000" class="news__content">
     <h2 class="news__subtitle">Тарталетка лимон</h2>
-    <div class="image-container">
-      <img src="/images/DSC_4380 2.png" alt="" class="news-main-image" width="420" height="523">
+    <p class="news__subtext">Цена <span class="units">(1 шт.)</span></p>
+    <div class="news__price">
+      <div class="news__price-content">
+        <p class="news__price__text">5</p>
+        <span>BYN</span>
+      </div>
+      <div class="news__counter">
+        <button class="news__counter__btn minus" data-direction="minus">-</button>
+        <input type="text" value="1" class="news__counter__value amount" />
+        <button class="news__counter__btn plus" data-direction="plus">+</button>
+      </div>
+      <div class="news__price-img">
+        <img src="/images/news__box.png" class="basket-desktop" alt="news__box" />
+      </div>
+    </div>
+    <h2 class="news-content__title">Описание</h2>
+    <p class="news-content__text">
+      Изделие из песочного теста с начинкой из лимонного заварного
+      крема.
+    </p>
+    <h2 class="news-content__title">Состав:</h2>
+    <p class="news-content__text">
+      Крем лимонный, лимонный сок, мука пшеничная, мука миндальная,
+      масло сливочное 82%, сахарная пудра, вода питьевая.
+    </p>
+    <div class="btn-body btn-news">
+      <div class="technical technical-news"></div>
+      <a href="/catalog-tartlets/catalog-tartlets.html" id="reviews">Купить</a>
     </div>
   </div>
-  <div class="news__image-two">
-    <div class="news__image__slider">
-      <img src="/images/news3.png" alt="" class="news__image-item news-img1" width="86" height="86" />
-      <button class="arrow left-arrow__news" id="show-next-btn">
-        <img class="arrow-back news-arrow-back" src="/images/стрелка назад.png">
-      </button>
-      <img src="/images/DSC_4380 2.png" alt="" width="135" height="162" class="news__image-item-item news-img2 news-active-img" />
-      <button class="arrow right-arrow__news" id="show-prev-btn">
-        <img class="arrow-next news-arrow-next" src="/images/стрелка.png">
-      </button>
-      <img src="/images/news2.png" alt="" class="news__image-item news-img3" />
-    </div>
-  </div>
-</div>
-<div data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000" class="news__content">
-  <h2 class="news__subtitle">Тарталетка лимон</h2>
-  <p class="news__subtext">Цена <span class="units">1 шт.</span></p>
-  <div class="news__price">
-    <div class="news__price-content">
-      <p class="news__price__text">5</p>
-      <span>BYN</span>
-    </div>
-    <div class="news__counter">
-      <button class="news__counter__btn minus" data-direction="minus">-</button>
-      <input type="text" value="1" class="news__counter__value amount" />
-      <button class="news__counter__btn plus" data-direction="plus">+</button>
-    </div>
-    <div class="news__price-img">
-      <img src="/images/news__box.png" class="basket-desktop" alt="news__box" />
-    </div>
-  </div>
-  <h2 class="news-content__title">Описание</h2>
-  <p class="news-content__text">
-    Изделие из песочного теста с начинкой из лимонного заварного
-    крема.
-  </p>
-  <h2 class="news-content__title">Состав:</h2>
-  <p class="news-content__text">
-    Крем лимонный, лимонный сок, мука пшеничная, мука миндальная,
-    масло сливочное 82%, сахарная пудра, вода питьевая.
-  </p>
-  <div class="btn-body btn-news">
-    <div class="technical technical-news"></div>
-    <a href="/catalog-tartlets/catalog-tartlets.html" id="reviews">Купить</a>
-  </div>
-</div>
-</div>`;
+  </div>`;
   const bodyItem = document.querySelectorAll('.d-flex-new');
   bodyItem.forEach(item => {
     const plus = item.querySelector('.plus'),
@@ -479,6 +485,7 @@ function viewChocolateBlock(event) {
       basketForDesktop = item.querySelector('.basket-desktop'),
       value = item.querySelector('.news__price__text'),
       title = item.querySelector('h2'),
+      img = item.querySelector('.image'),
       minus = item.querySelector('.minus');
     minus.setAttribute("disabled", "disabled");
     plus.addEventListener('click', () => {
@@ -495,7 +502,7 @@ function viewChocolateBlock(event) {
     });
     basketForDesktop.addEventListener('click', (e) => {
       e.preventDefault();
-      localStorage.setItem(title.innerHTML, JSON.stringify([amount.value, units.innerHTML, value.innerHTML]));
+      localStorage.setItem(title.innerHTML, JSON.stringify([amount.value, units.innerHTML, value.innerHTML,img.innerHTML]));
       numberOfPosition.style.display = 'flex';
       amount.value = 1;
     });
@@ -554,26 +561,28 @@ function viewEclairsBlock(event) {
     <div class="news__image-one">
       <h2 class="news__subtitle">Тарталетка лимон</h2>
       <div class="image-container">
-        <img src="/images/DSC_4380 2.png" alt="" class="news-main-image" width="420" height="523">
+        <img src="/images/DSC_4849 1.png" alt="" class="news-main-image" width="420" height="523">
       </div>
     </div>
     <div class="news__image-two">
       <div class="news__image__slider">
-        <img src="/images/news3.png" alt="" class="news__image-item news-img1" width="86" height="86" />
+        <img src="/images/DSC_4380 2.png" alt="" width="86" height="86" class="news__image-item news-img3"/>
         <button class="arrow left-arrow__news" id="show-next-btn">
           <img class="arrow-back news-arrow-back" src="/images/стрелка назад.png">
         </button>
-        <img src="/images/DSC_4380 2.png" alt="" width="135" height="162" class="news__image-item-item news-img2 news-active-img" />
+        <div class = "image">
+        <img  src="/images/news2.png" width="135" height="162"  alt="" class="news__image-item-item news-img2 news-active-img"/>
+        </div>
         <button class="arrow right-arrow__news" id="show-prev-btn">
           <img class="arrow-next news-arrow-next" src="/images/стрелка.png">
         </button>
-        <img src="/images/news2.png" alt="" class="news__image-item news-img3" />
+        <img src="/images/news3.png" alt="" class="news__image-item news-img1" width="86" height="86"/>
       </div>
     </div>
   </div>
   <div data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000" class="news__content">
     <h2 class="news__subtitle">Тарталетка лимон</h2>
-    <p class="news__subtext">Цена <span class="units">1 шт.</span></p>
+    <p class="news__subtext">Цена <span class="units">(1 шт.)</span></p>
     <div class="news__price">
       <div class="news__price-content">
         <p class="news__price__text">5</p>
@@ -612,6 +621,7 @@ function viewEclairsBlock(event) {
       basketForDesktop = item.querySelector('.basket-desktop'),
       value = item.querySelector('.news__price__text'),
       title = item.querySelector('h2'),
+      img = item.querySelector('.image'),
       minus = item.querySelector('.minus');
     minus.setAttribute("disabled", "disabled");
     plus.addEventListener('click', () => {
@@ -628,7 +638,7 @@ function viewEclairsBlock(event) {
     });
     basketForDesktop.addEventListener('click', (e) => {
       e.preventDefault();
-      localStorage.setItem(title.innerHTML, JSON.stringify([amount.value, units.innerHTML, value.innerHTML]));
+      localStorage.setItem(title.innerHTML, JSON.stringify([amount.value, units.innerHTML, value.innerHTML,img.innerHTML]));
       numberOfPosition.style.display = 'flex';
       amount.value = 1;
     });

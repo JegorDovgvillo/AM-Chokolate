@@ -159,6 +159,7 @@ bodyItemShell.forEach(item => {
         basketForOther = item.querySelector('.basket-adaptate'),
         value = item.querySelector('.value'),
         title = item.querySelector('h3'),
+        img = item.querySelector('.image'),
         minus = item.querySelector('.minus');
     minus.setAttribute("disabled", "disabled");
     plus.addEventListener('click', () => {
@@ -174,14 +175,15 @@ bodyItemShell.forEach(item => {
         }
     });
     basketForDesktop.addEventListener('click', () => {
-        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML]));
+        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML, img.innerHTML]));
         location.reload();
         numberOfPosition.style.display = 'flex';
     });
     basketForOther.addEventListener('click', () => {
-        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML]));
+        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML, img.innerHTML]));
         location.reload();
     });
+
 });
 const categoryTriangle = document.getElementsByClassName('category__triangle')[0],
     navigationList = document.getElementsByClassName('navigation-list')[0];
