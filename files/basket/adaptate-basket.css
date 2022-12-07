@@ -35,13 +35,14 @@
     .catalog__popular.active {
         right: 620px;
     }
-}
-@media only all and (max-width: 1100px) {
     .basket__item .items-info__operation {
         padding-left: 70px;
     }
     .total-sum {
         margin-left: 70px;
+    }
+    .items-info__name {
+        padding-left: 70px;
     }
 }
 @media only all and (max-width: 1050px) {
@@ -175,8 +176,14 @@
     }
 
     /*body*/
+    .items-info__name {
+        flex-basis: 245px;
+    }
+    .items-info__name {
+        padding-left: 30px;
+    }
     .basket__item .items-info__operation {
-        padding-left: 20px;
+        padding-left: 0px;
     }
     .total-sum {
         margin-left: 20px;
@@ -232,6 +239,12 @@
         top: 137px;
     }
     /*catalog*/
+    .image .product-image {
+        display: none;
+    }
+    .items-info__name .product-image {
+        display: block;
+    }
     .catalog {
         padding: 0 20px 60px 20px;
     }
@@ -253,9 +266,9 @@
         font-size: 10px;
         line-height: 11px;
         position: relative;
-        top: 58px;
-        left: -3px;
+        top: 61px;
         width: 30px;
+        right: 315px;
     }
     .basket__item .currency {
         font-weight: 700;
@@ -272,8 +285,10 @@
         left: 18px;
     }
     .items-info__name {
-        padding-left: 0px;
+        padding-left: 65px;
         flex-basis: auto;
+        flex-direction: row;
+        align-items: flex-end;
     }
     .all-amount {
         position: relative;
@@ -299,7 +314,7 @@
     }
     .basket__item .items-info__name h3 {
         font-size: 18px;
-        width: 250px;
+        width: 205px;
         line-height: 21px;
         margin-bottom: 20px;
         margin-left: 26px;
@@ -341,9 +356,6 @@
     .plus {
         margin-right: 15px;
     }
-    .items-info__name span {
-        left: 7px;
-    }
     .basket__ordering-value {
         padding-left: 20px;
     }
@@ -383,7 +395,7 @@
         margin-right: 0px;
     }
     .basket__item .items-info__name span {
-        left: 25px;
+        right: 286px;
     }
     .total-sum {
         width: 85px;

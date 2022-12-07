@@ -180,6 +180,9 @@ img[src*="корзина(черн)"] {
     color: #121011;
 }
 /*Каталог*/
+.all-amount-adaptate { 
+    display: none;
+}
 form {
     grid-column: 1;
 }
@@ -340,6 +343,7 @@ form .technical {
     color: rgba(18, 16, 17, 0.4);
 }
 .items-info__name h3 {
+    padding-left: 80px;
     font-family: "Gilroy";
     font-style: normal;
     font-weight: 400;
@@ -389,7 +393,7 @@ form .technical {
 .items-info__name {
     display: flex;
     flex-direction: row;
-    flex-basis: 350px;
+    flex-basis: 430px;
     align-items: flex-end;
 }
 .items-info__operation {

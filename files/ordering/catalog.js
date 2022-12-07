@@ -50,6 +50,8 @@ for (let i = 0; i < localStorage.length; i++) {
                 <div>
                     <span class="sum">${grandTotal}</span>
                     <span class="valuta">Byn</span>
+                    <span class="all-amount-adaptate">${parseInt(itemUnits.slice(1, 5)) * itemAmount}
+                    ${parseInt(itemUnits.slice(1, 5)) == 100 ? 'гр.' : 'шт.'}</span>
                 </div>
                 <span class="all-amount">${parseInt(itemUnits.slice(1, 5)) * itemAmount}
                     ${parseInt(itemUnits.slice(1, 5)) == 100 ? 'гр.' : 'шт.'}</span>
@@ -65,9 +67,16 @@ const forAllPositions = document.getElementsByClassName('basket__ordering-value'
 let counter = 0;
 basketItem.forEach(item => {
     const sum = item.querySelector('.sum'),
+        title = item.querySelector('h3'),
+        cross = item.querySelector('.items-info__cross'),
         convertedSum = parseInt(sum.innerHTML);
     counter += convertedSum;
     forAllPositions.innerHTML = counter;
+    cross.addEventListener('click', () => {
+        item.remove();
+        localStorage.removeItem(title.innerHTML);
+        location.reload();
+    });
 });
 
 

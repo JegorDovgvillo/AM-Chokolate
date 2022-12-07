@@ -46,6 +46,7 @@ for (let i = 0; i < localStorage.length; i++) {
     ${img}
     </div>
         <div class="items-info__name">
+        ${img}
             <h3>${key}</h3>
             <span class="units">${itemUnits}</span>
         </div>
