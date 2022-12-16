@@ -94,7 +94,7 @@ function pickupBlock() {
     const deliveryParagraph = document.getElementsByClassName('delivery')[0];
     if (inputDeliveryFirst.checked) {
         deliveryAddress.innerHTML = `<li">
-        <h4>3.Адрес заведения</h4>
+        <h4>3. Адрес заведения</h4>
         <select class="institution-address" name="Адрес заведения" required>
         <option value="г. Минск, ул. Немига, д. 3" >г. Минск, ул. Немига, д. 3</option>
         <option value="п. Солнечный,  ул. Сосновая, д. 2 ">п. Солнечный,  ул. Сосновая, д. 2 </option>
@@ -102,7 +102,7 @@ function pickupBlock() {
     </li>`;
         payment.innerHTML = 'Оплата при получении';
         payment.setAttribute('value', 'При получении');
-        readyTime.innerHTML = '4.забрать заказ ';
+        readyTime.innerHTML = '4. Забрать заказ ';
         result.innerHTML = parseInt(forAllPositions.innerHTML);
         basketOrderingPrice.style.borderBottom = 'solid 1px #198d9b';
         if (deliveryParagraph) {
@@ -116,7 +116,7 @@ function deliveryBlock() {
     if (inputDeliverySecond.checked) {
         deliveryAddress.innerHTML = `
         <li class="delivery-address">
-                    <h4>3.Адрес доставки</h4>
+                    <h4>3. Адрес доставки</h4>
                     <input type="text" placeholder="Город" required name="Город"><br>
                     <input type="text" placeholder="Улица" required name="Улица"><br>
                     <input type="text" placeholder="Дом" required name="Дом">
@@ -128,7 +128,7 @@ function deliveryBlock() {
         basketOrderingPrice.style.borderBottom = 'none';
         payment.innerHTML = 'Оплата курьеру';
         payment.setAttribute('value', 'Курьеру');
-        readyTime.innerHTML = '4.Время доставки ';
+        readyTime.innerHTML = '4. Время доставки ';
         basketOrderingPrice.insertAdjacentHTML('afterend', `
         <p class="delivery">Доставка:
                     <span class="delivery-value">5</span>
@@ -141,7 +141,7 @@ function deliveryBlock() {
     }
 }
 const inputName = document.getElementsByClassName('name')[0],
-    bbb = document.getElementsByClassName('submission')[0],
+    submissionButton = document.getElementsByClassName('submission')[0],
     inputTel = document.getElementsByClassName('tel')[0],
     inputMail = document.getElementsByClassName('mail')[0],
     userName = /^[a-zа-я]{1,10}$/i,
@@ -150,31 +150,34 @@ const inputName = document.getElementsByClassName('name')[0],
 inputName.onkeyup = validationFormName;
 function validationFormName() {
     if (userName.test(inputName.value)) {
-        bbb.removeAttribute('disabled');
+        submissionButton.removeAttribute('disabled');
+        inputName.style.color = 'black';
     }
     else {
         inputName.style.color = 'red';
-        bbb.setAttribute('disabled', 'disabled');
+        submissionButton.setAttribute('disabled', 'disabled');
     }
 }
 inputTel.onkeyup = validationFormTel;
 function validationFormTel() {
     if (tel.test(inputTel.value)) {
-        bbb.removeAttribute('disabled');
+        inputTel.style.color = 'black';
+        submissionButton.removeAttribute('disabled');
     }
     else {
         inputTel.style.color = 'red';
-        bbb.setAttribute('disabled', 'disabled');
+        submissionButton.setAttribute('disabled', 'disabled');
     }
 }
 inputMail.onkeyup = validationFormMail;
 function validationFormMail() {
     if (mail.test(inputMail.value)) {
-        bbb.removeAttribute('disabled');
+        inputMail.style.color = 'black';
+        submissionButton.removeAttribute('disabled');
     }
     else {
         inputMail.style.color = 'red';
-        bbb.setAttribute('disabled', 'disabled');
+        submissionButton.setAttribute('disabled', 'disabled');
     }
 }
 const formElem = document.getElementsByTagName('form')[0];
@@ -197,7 +200,10 @@ ${parseInt(itemUnits.slice(1, 5)) == 100 ? 'гр.' : 'шт.'} / ${grandTotal}byn
 const catalog = document.getElementsByClassName('catalog')[0];
 formElem.onsubmit = async (e) => {
     e.preventDefault();
+if(+result.innerHTML < 20) {
+alert('Сумма заказа не менее 20 Byn');
 
+}else {
     let response = await fetch('#', {
         method: 'POST',
         body: new FormData(formElem)
@@ -218,6 +224,7 @@ formElem.onsubmit = async (e) => {
         </div>
     </div>
 </div>`;
+}
 };
 
 

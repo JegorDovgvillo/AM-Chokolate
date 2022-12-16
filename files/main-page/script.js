@@ -216,7 +216,7 @@ function scrollToFourthPageReviews(el) {
   if (window.getComputedStyle(reviewsFifthPage).display == 'none') {
     reviewsArrow.setAttribute('disabled', 'disabled');
     reviewsArrow.classList.add('disabled-menu-arrow');
-  }else {
+  } else {
     reviewsArrow.removeAttribute('disabled');
     reviewsArrow.classList.remove('disabled-menu-arrow');
   }
@@ -296,10 +296,8 @@ bodyItem.forEach(item => {
   });
   basketForDesktop.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log(units.innerHTML)
-    console.log(amount.value)
-    console.log(value.innerHTML)
-    localStorage.setItem(title.innerHTML, JSON.stringify([amount.value, units.innerHTML, value.innerHTML,img.innerHTML]));
+    localStorage.setItem(title.innerHTML, JSON.stringify([amount.value, units.innerHTML,
+      value.innerHTML, img.innerHTML]));
     numberOfPosition.style.display = 'flex';
     amount.value = 1;
   });
@@ -324,7 +322,7 @@ sliderImages.forEach(item => {
   adaptateArrowNext.addEventListener('click', scrollToNextImage);
   function scrollToNextImage() {
     if (firstImage.classList.contains('active-image')) {
-      mainImage.innerHTML = '<img  src="/images/sliderImages/4.jpg" width="590" height="425" alt="">';
+      mainImage.innerHTML = '<img  src="/images/sliderImages/4.png" width="590" height="425" alt="">';
       secondImage.classList.add('active-image');
       firstImage.classList.remove('active-image');
       adaptateArrowBack.removeAttribute('disabled');
@@ -357,7 +355,7 @@ sliderImages.forEach(item => {
   adaptateArrowBack.addEventListener('click', scrollTopreviousImage);
   function scrollTopreviousImage() {
     if (secondImage.classList.contains('active-image')) {
-      mainImage.innerHTML = '<img  src="/images/sliderImages/5.jpg" width="590" height="425" alt="">';
+      mainImage.innerHTML = '<img  src="/images/sliderImages/5.png" width="590" height="425" alt="">';
       firstImage.classList.add('active-image');
       secondImage.classList.remove('active-image');
       adaptateArrowBack.setAttribute('disabled', 'disabled');
@@ -366,7 +364,7 @@ sliderImages.forEach(item => {
       arrowSliderBack.classList.add('disabled-menu-arrow');
       slidePosition.innerHTML = 1;
     } else if (thirdImage.classList.contains('active-image')) {
-      mainImage.innerHTML = '<img  src="/images/sliderImages/4.jpg" width="590" height="425" alt="">';
+      mainImage.innerHTML = '<img  src="/images/sliderImages/4.png" width="590" height="425" alt="">';
       secondImage.classList.add('active-image');
       thirdImage.classList.remove('active-image');
       slidePosition.innerHTML = 2;
@@ -423,19 +421,20 @@ function viewChocolateBlock(event) {
   newBlock.innerHTML = `<div class="d-flex-new justify-content-around">
   <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" class="news__image">
     <div class="news__image-one">
-      <h2 class="news__subtitle">Тарталетка лимон</h2>
+      <h2 class="news__subtitle">Имбирь в шоколаде</h2>
       <div class="image-container">
         <img src="/images/DSC_4380 2.png" alt="" class="news-main-image" width="420" height="523">
       </div>
     </div>
     <div class="news__image-two">
       <div class="news__image__slider">
-        <img src="/images/news3.png" alt="" class="news__image-item news-img1" width="86" height="86" />
+        <img src="/images/DSC_5333.png" alt="" class="news__image-item news-img1" width="86" height="86" />
         <button class="arrow left-arrow__news" id="show-next-btn">
           <img class="arrow-back news-arrow-back" src="/images/стрелка назад.png">
         </button>
         <div class = "image">
-        <img src="/images/DSC_4380 2.png" alt="" width="135" height="162" class="news__image-item-item news-img2 news-active-img" />
+        <img src="/images/DSC_4380 2.png" alt="" width="135" height="162" class="news__image-item-item 
+        news-img2 news-active-img" />
         </div>
         <button class="arrow right-arrow__news" id="show-prev-btn">
           <img class="arrow-next news-arrow-next" src="/images/стрелка.png">
@@ -445,7 +444,7 @@ function viewChocolateBlock(event) {
     </div>
   </div>
   <div data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000" class="news__content">
-    <h2 class="news__subtitle">Тарталетка лимон</h2>
+    <h2 class="news__subtitle">Имбирь в шоколаде</h2>
     <p class="news__subtext">Цена <span class="units">(1 шт.)</span></p>
     <div class="news__price">
       <div class="news__price-content">
@@ -453,9 +452,9 @@ function viewChocolateBlock(event) {
         <span>BYN</span>
       </div>
       <div class="news__counter">
-        <button class="news__counter__btn minus" data-direction="minus">-</button>
-        <input type="text" value="1" class="news__counter__value amount" />
-        <button class="news__counter__btn plus" data-direction="plus">+</button>
+        <button class="news__counter__btn minus" >-</button>
+        <input readonly type="text" value="1" class="news__counter__value amount" />
+        <button class="news__counter__btn plus">+</button>
       </div>
       <div class="news__price-img">
         <img src="/images/news__box.png" class="basket-desktop" alt="news__box" />
@@ -477,7 +476,6 @@ function viewChocolateBlock(event) {
     </div>
   </div>
   </div>`;
-  const bodyItem = document.querySelectorAll('.d-flex-new');
   bodyItem.forEach(item => {
     const plus = item.querySelector('.plus'),
       amount = item.querySelector('.amount'),
@@ -502,7 +500,8 @@ function viewChocolateBlock(event) {
     });
     basketForDesktop.addEventListener('click', (e) => {
       e.preventDefault();
-      localStorage.setItem(title.innerHTML, JSON.stringify([amount.value, units.innerHTML, value.innerHTML,img.innerHTML]));
+      localStorage.setItem(title.innerHTML, JSON.stringify([amount.value, units.innerHTML,
+        value.innerHTML, img.innerHTML]));
       numberOfPosition.style.display = 'flex';
       amount.value = 1;
     });
@@ -514,7 +513,12 @@ function viewChocolateBlock(event) {
       arrowSliderNewBack = item.querySelector('.news-arrow-back'),
       firstImage = item.querySelector('.news-img1'),
       secondImage = item.querySelector('.news-img2'),
-      thirdImage = item.querySelector('.news-img3');
+      thirdImage = item.querySelector('.news-img3'),
+      itemTitleAdaptate = document.getElementsByClassName('news__subtitle')[0],
+      itemTitle = document.getElementsByClassName('news__subtitle')[1],
+    itemPrice = document.getElementsByClassName('news__price__text')[0],
+    itemContent = document.getElementsByClassName('news-content__text')[0],
+    itemCompound = document.getElementsByClassName('news-content__text')[1];
     arrowSliderNewNext.addEventListener('click', () => {
       if (secondImage.classList.contains('news-active-img')) {
         mainImageNew.innerHTML = '<img src="/images/DSC_4849 1.png" alt="" width="420" height="523"/>';
@@ -522,12 +526,26 @@ function viewChocolateBlock(event) {
         secondImage.classList.remove('news-active-img');
         arrowSliderNewNext.setAttribute('disabled', 'disabled');
         arrowSliderNewNext.classList.add('disabled-menu-arrow');
+        itemTitleAdaptate.innerHTML = `Марципан в шоколаде`;
+        itemTitle.innerHTML = `Марципан в шоколаде`;
+        itemPrice.innerHTML = `15`;
+        itemContent.innerHTML = `Изделие из песочного теста с начинкой из лимонного заварного
+      крема.`;
+        itemCompound.innerHTML = ` Крем лимонный, лимонный сок, мука пшеничная, мука миндальная,
+      масло сливочное 82%, сахарная пудра, вода питьевая.`;
       } else if (firstImage.classList.contains('news-active-img')) {
         mainImageNew.innerHTML = '<img src="/images/DSC_4380 2.png" alt="" width="420" height="523"/>';
         secondImage.classList.add('news-active-img');
         firstImage.classList.remove('news-active-img');
         arrowSliderNewBack.removeAttribute('disabled');
         arrowSliderNewBack.classList.remove('disabled-menu-arrow');
+        itemTitleAdaptate.innerHTML = `Имбирь в шоколаде`;
+        itemTitle.innerHTML = `Имбирь в шоколаде`;
+        itemPrice.innerHTML = `15`;
+        itemContent.innerHTML = `Изделие из песочного теста с начинкой из лимонного заварного
+      крема.`;
+        itemCompound.innerHTML = ` Крем лимонный, лимонный сок, мука пшеничная, мука миндальная,
+      масло сливочное 82%, сахарная пудра, вода питьевая.`;
       }
     });
     arrowSliderNewBack.addEventListener('click', () => {
@@ -537,18 +555,32 @@ function viewChocolateBlock(event) {
         thirdImage.classList.remove('news-active-img');
         arrowSliderNewNext.removeAttribute('disabled');
         arrowSliderNewNext.classList.remove('disabled-menu-arrow');
+        itemTitleAdaptate.innerHTML = `Имбирь в шоколаде`;
+        itemTitle.innerHTML = `Имбирь в шоколаде`;
+        itemPrice.innerHTML = `15`;
+        itemContent.innerHTML = `Изделие из песочного теста с начинкой из лимонного заварного
+      крема.`;
+        itemCompound.innerHTML = ` Крем лимонный, лимонный сок, мука пшеничная, мука миндальная,
+      масло сливочное 82%, сахарная пудра, вода питьевая.`;
       } else if (secondImage.classList.contains('news-active-img')) {
-        mainImageNew.innerHTML = '<img src="/images/news3.png" alt="" width="420" height="523"/>';
+        mainImageNew.innerHTML = '<img src="/images/DSC_5333.png" alt="" width="420" height="523"/>';
         secondImage.classList.remove('news-active-img');
         firstImage.classList.add('news-active-img');
         arrowSliderNewBack.setAttribute('disabled', 'disabled');
         arrowSliderNewBack.classList.add('disabled-menu-arrow');
+        itemTitleAdaptate.innerHTML = `Инжир в шоколаде`;
+        itemTitle.innerHTML = `Инжир в шоколаде`;
+        itemPrice.innerHTML = `15`;
+        itemContent.innerHTML = `Изделие из песочного теста с начинкой из лимонного заварного
+      крема.`;
+        itemCompound.innerHTML = ` Крем лимонный, лимонный сок, мука пшеничная, мука миндальная,
+      масло сливочное 82%, сахарная пудра, вода питьевая.`;
       }
     });
   });
 }
 function viewEclairsBlock(event) {
-  event.preventDefault();
+    event.preventDefault();
   if (tartletsBlock.classList.contains('active-card')) {
     tartletsBlock.classList.remove('active-card');
     eclairsBlock.classList.add('active-card');
@@ -559,7 +591,7 @@ function viewEclairsBlock(event) {
   newBlock.innerHTML = `<div class="d-flex-new justify-content-around">
   <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" class="news__image">
     <div class="news__image-one">
-      <h2 class="news__subtitle">Тарталетка лимон</h2>
+      <h2 class="news__subtitle">Эклер шоколад</h2>
       <div class="image-container">
         <img src="/images/DSC_4849 1.png" alt="" class="news-main-image" width="420" height="523">
       </div>
@@ -571,17 +603,18 @@ function viewEclairsBlock(event) {
           <img class="arrow-back news-arrow-back" src="/images/стрелка назад.png">
         </button>
         <div class = "image">
-        <img  src="/images/news2.png" width="135" height="162"  alt="" class="news__image-item-item news-img2 news-active-img"/>
+        <img  src="/images/news2.png" width="135" height="162"  alt="" class="news__image-item-item news-img2 
+        news-active-img"/>
         </div>
         <button class="arrow right-arrow__news" id="show-prev-btn">
           <img class="arrow-next news-arrow-next" src="/images/стрелка.png">
         </button>
-        <img src="/images/news3.png" alt="" class="news__image-item news-img1" width="86" height="86"/>
+        <img src="/images/DSC_5333.png" alt="" class="news__image-item news-img1" width="86" height="86"/>
       </div>
     </div>
   </div>
   <div data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000" class="news__content">
-    <h2 class="news__subtitle">Тарталетка лимон</h2>
+    <h2 class="news__subtitle">Эклер шоколад</h2>
     <p class="news__subtext">Цена <span class="units">(1 шт.)</span></p>
     <div class="news__price">
       <div class="news__price-content">
@@ -589,9 +622,9 @@ function viewEclairsBlock(event) {
         <span>BYN</span>
       </div>
       <div class="news__counter">
-        <button class="news__counter__btn minus" data-direction="minus">-</button>
-        <input type="text" value="1" class="news__counter__value amount" />
-        <button class="news__counter__btn plus" data-direction="plus">+</button>
+        <button class="news__counter__btn minus">-</button>
+        <input readonly type="text" value="1" class="news__counter__value amount" />
+        <button class="news__counter__btn plus" >+</button>
       </div>
       <div class="news__price-img">
         <img src="/images/news__box.png" class="basket-desktop" alt="news__box" />
@@ -613,7 +646,6 @@ function viewEclairsBlock(event) {
     </div>
   </div>
   </div>`;
-  const bodyItem = document.querySelectorAll('.d-flex-new');
   bodyItem.forEach(item => {
     const plus = item.querySelector('.plus'),
       amount = item.querySelector('.amount'),
@@ -638,7 +670,8 @@ function viewEclairsBlock(event) {
     });
     basketForDesktop.addEventListener('click', (e) => {
       e.preventDefault();
-      localStorage.setItem(title.innerHTML, JSON.stringify([amount.value, units.innerHTML, value.innerHTML,img.innerHTML]));
+      localStorage.setItem(title.innerHTML, JSON.stringify([amount.value, units.innerHTML,
+        value.innerHTML, img.innerHTML]));
       numberOfPosition.style.display = 'flex';
       amount.value = 1;
     });
@@ -648,22 +681,41 @@ function viewEclairsBlock(event) {
   sliderImagesNew.forEach(item => {
     const arrowSliderNewNext = item.querySelector('.news-arrow-next'),
       arrowSliderNewBack = item.querySelector('.news-arrow-back'),
-      firstImage = item.querySelector('.news-img1'),
+      firstImage = item.querySelector('.news-img3'),
       secondImage = item.querySelector('.news-img2'),
-      thirdImage = item.querySelector('.news-img3');
+      itemTitleAdaptate = document.getElementsByClassName('news__subtitle')[0],
+    itemTitle = document.getElementsByClassName('news__subtitle')[1],
+    itemPrice = document.getElementsByClassName('news__price__text')[0],
+    itemContent = document.getElementsByClassName('news-content__text')[0],
+    itemCompound = document.getElementsByClassName('news-content__text')[1],
+      thirdImage = item.querySelector('.news-img1');
     arrowSliderNewNext.addEventListener('click', () => {
       if (secondImage.classList.contains('news-active-img')) {
-        mainImageNew.innerHTML = '<img src="/images/news3.png" alt="" width="420" height="523"/>';
+        mainImageNew.innerHTML = '<img src="/images/DSC_5333.png" alt="" width="420" height="523"/>';
         thirdImage.classList.add('news-active-img');
         secondImage.classList.remove('news-active-img');
         arrowSliderNewNext.setAttribute('disabled', 'disabled');
         arrowSliderNewNext.classList.add('disabled-menu-arrow');
+        itemTitleAdaptate.innerHTML = `Эклер лимон`;
+        itemTitle.innerHTML = `Эклер лимон`;
+        itemPrice.innerHTML = `15`;
+        itemContent.innerHTML = `Изделие из песочного теста с начинкой из лимонного заварного
+      крема.`;
+        itemCompound.innerHTML = ` Крем лимонный, лимонный сок, мука пшеничная, мука миндальная,
+      масло сливочное 82%, сахарная пудра, вода питьевая.`;
       } else if (firstImage.classList.contains('news-active-img')) {
         mainImageNew.innerHTML = '<img src="/images/DSC_4849 1.png" alt="" width="420" height="523"/>';
         secondImage.classList.add('news-active-img');
         firstImage.classList.remove('news-active-img');
         arrowSliderNewBack.removeAttribute('disabled');
         arrowSliderNewBack.classList.remove('disabled-menu-arrow');
+        itemTitleAdaptate.innerHTML = `Эклер шоколад`;
+        itemTitle.innerHTML = `Эклер шоколад`;
+        itemPrice.innerHTML = `5`;
+        itemContent.innerHTML = `Изделие из песочного теста с начинкой из лимонного заварного
+      крема.`;
+        itemCompound.innerHTML = ` Крем лимонный, лимонный сок, мука пшеничная, мука миндальная,
+      масло сливочное 82%, сахарная пудра, вода питьевая.`;
       }
     });
     arrowSliderNewBack.addEventListener('click', () => {
@@ -673,17 +725,37 @@ function viewEclairsBlock(event) {
         thirdImage.classList.remove('news-active-img');
         arrowSliderNewNext.removeAttribute('disabled');
         arrowSliderNewNext.classList.remove('disabled-menu-arrow');
+        itemTitleAdaptate.innerHTML = `Эклер шоколад`;
+        itemTitle.innerHTML = `Эклер шоколад`;
+        itemPrice.innerHTML = `5`;
+        itemContent.innerHTML = `Изделие из песочного теста с начинкой из лимонного заварного
+      крема.`;
+        itemCompound.innerHTML = ` Крем лимонный, лимонный сок, мука пшеничная, мука миндальная,
+      масло сливочное 82%, сахарная пудра, вода питьевая.`;
       } else if (secondImage.classList.contains('news-active-img')) {
         mainImageNew.innerHTML = '<img src="/images/DSC_4380 2.png" alt="" width="420" height="523"/>';
         secondImage.classList.remove('news-active-img');
         firstImage.classList.add('news-active-img');
         arrowSliderNewBack.setAttribute('disabled', 'disabled');
         arrowSliderNewBack.classList.add('disabled-menu-arrow');
+        itemTitleAdaptate.innerHTML = `Тарталетка лимон`;
+        itemTitleAdaptate.innerHTML = `Эклер мараккуйя`;
+        itemTitle.innerHTML = `Эклер мараккуйя`;
+        itemPrice.innerHTML = `5`;
+        itemContent.innerHTML = `Изделие из песочного теста с начинкой из лимонного заварного
+      крема.`;
+        itemCompound.innerHTML = ` Крем лимонный, лимонный сок, мука пшеничная, мука миндальная,
+      масло сливочное 82%, сахарная пудра, вода питьевая.`;
       }
     });
   });
 }
 const sliderImagesNew = document.querySelectorAll('.news__image__slider'),
+  itemTitleAdaptate = document.getElementsByClassName('news__subtitle')[0],
+  itemTitle = document.getElementsByClassName('news__subtitle')[1],
+  itemPrice = document.getElementsByClassName('news__price__text')[0],
+  itemContent = document.getElementsByClassName('news-content__text')[0],
+  itemCompound = document.getElementsByClassName('news-content__text')[1],
   mainImageNew = document.getElementsByClassName('image-container')[0];
 sliderImagesNew.forEach(item => {
   const arrowSliderNewNext = item.querySelector('.news-arrow-next'),
@@ -698,27 +770,55 @@ sliderImagesNew.forEach(item => {
       secondImage.classList.remove('news-active-img');
       arrowSliderNewNext.setAttribute('disabled', 'disabled');
       arrowSliderNewNext.classList.add('disabled-menu-arrow');
+      itemTitleAdaptate.innerHTML = `Тарталетка маракуйя`;
+      itemTitle.innerHTML = `Тарталетка маракуйя`;
+      itemPrice.innerHTML = `15`;
+      itemContent.innerHTML = `Крем лимонный, лимонный сок, мука пшеничная, мука миндальная,
+      масло сливочное 82%, сахарная пудра, вода питьевая.`;
+      itemCompound.innerHTML = `Крем лимонный, лимонный сок, мука пшеничная, мука миндальная,
+      масло сливочное 82%, сахарная пудра, вода питьевая.`;
     } else if (firstImage.classList.contains('news-active-img')) {
-      mainImageNew.innerHTML = '<img src="/images/news3.png" alt="" width="420" height="523"/>';
+      mainImageNew.innerHTML = '<img src="/images/DSC_5333.png" alt="" width="420" height="523"/>';
       secondImage.classList.add('news-active-img');
       firstImage.classList.remove('news-active-img');
       arrowSliderNewBack.removeAttribute('disabled');
       arrowSliderNewBack.classList.remove('disabled-menu-arrow');
+      itemTitleAdaptate.innerHTML = `Тарталетка лимон`;
+      itemTitle.innerHTML = `Тарталетка лимон`;
+      itemPrice.innerHTML = `5`;
+      itemContent.innerHTML = `Изделие из песочного теста с начинкой из лимонного заварного
+      крема.`;
+      itemCompound.innerHTML = ` Крем лимонный, лимонный сок, мука пшеничная, мука миндальная,
+      масло сливочное 82%, сахарная пудра, вода питьевая.`;
     }
   });
   arrowSliderNewBack.addEventListener('click', () => {
     if (thirdImage.classList.contains('news-active-img')) {
-      mainImageNew.innerHTML = '<img src="/images/news3.png" alt="" width="420" height="523"/>';
+      mainImageNew.innerHTML = '<img src="/images/DSC_5333.png" alt="" width="420" height="523"/>';
       secondImage.classList.add('news-active-img');
       thirdImage.classList.remove('news-active-img');
       arrowSliderNewNext.removeAttribute('disabled');
       arrowSliderNewNext.classList.remove('disabled-menu-arrow');
+      itemTitleAdaptate.innerHTML = `Тарталетка лимон`;
+      itemTitle.innerHTML = `Тарталетка лимон`;
+      itemPrice.innerHTML = `5`;
+      itemContent.innerHTML = `Изделие из песочного теста с начинкой из лимонного заварного
+      крема.`;
+      itemCompound.innerHTML = ` Крем лимонный, лимонный сок, мука пшеничная, мука миндальная,
+      масло сливочное 82%, сахарная пудра, вода питьевая.`;
     } else if (secondImage.classList.contains('news-active-img')) {
       mainImageNew.innerHTML = '<img src="/images/DSC_4380 2.png" alt="" width="420" height="523"/>';
       secondImage.classList.remove('news-active-img');
       firstImage.classList.add('news-active-img');
       arrowSliderNewBack.setAttribute('disabled', 'disabled');
       arrowSliderNewBack.classList.add('disabled-menu-arrow');
+      itemTitleAdaptate.innerHTML = `Тарталетка шоколад`;
+      itemTitle.innerHTML = `Тарталетка шоколад`;
+      itemPrice.innerHTML = `25`;
+      itemContent.innerHTML = `Крем лимонный, лимонный сок, мука пшеничная, мука миндальная,
+      масло сливочное 82%, сахарная пудра, вода питьевая.`;
+      itemCompound.innerHTML = `Крем лимонный, лимонный сок, мука пшеничная, мука миндальная,
+      масло сливочное 82%, сахарная пудра, вода питьевая.`;
     }
   });
 });

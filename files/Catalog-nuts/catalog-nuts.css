@@ -26,7 +26,7 @@ body {
     transition: all 0.7s ease-in-out;
 }
 img[src*="корзина(черн)"] {
-    margin-bottom: 29px;
+    margin-bottom: 0px;
 }
 .header__list-item a {
     text-decoration: none;
@@ -38,6 +38,7 @@ img[src*="корзина(черн)"] {
     color: #121011;
 }
 .header {
+    padding-top: 37px;
     width: 1440px;
     padding-left: 130px;
     display: flex;
@@ -72,7 +73,7 @@ img[src*="корзина(черн)"] {
     width: 18px;
     height: 18px;
     border-radius: 100%;
-    top: -47px;
+    top: -20px;
     right: -9px;
     text-align: center;
     font-family: "Gilroy";
@@ -696,6 +697,4 @@ img[src*="корзина(черн)"] {
     text-decoration: none;
     margin-bottom: 27px;
 }
-.ddd {
-    color: #198d9b;
-}
+

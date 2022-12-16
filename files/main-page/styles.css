@@ -308,9 +308,10 @@ header {
 }
 .container-fluid-header {
   display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    padding-bottom: 10px;
+  flex-direction: row;
+  align-items: flex-end;
+  padding-bottom: 10px;
+  padding-top: 37px;
 }
 .nav-link:last-child {
   margin-right: 35px;
@@ -1509,4 +1510,11 @@ line-height: 20px;
   font-size: 25px;
   line-height: 29px;
   color: #121011;
+}
+.slide-item:not(.active-image) {
+  opacity: 0.5;
+}
+.news__image-item:not(.news-active-img),
+.news__image-item-item:not(.news-active-img) {
+  opacity: 0.5;
 }

@@ -65,6 +65,7 @@
         margin-bottom: 7px;
     }
     .header {
+        padding-top: 0;
         position: fixed;
         justify-content: center;
         width: 100%;
@@ -239,10 +240,15 @@
         top: 137px;
     }
     /*catalog*/
-    .image .product-image {
-        display: none;
-    }
-    .items-info__name .product-image {
+    
+    .image .product-image,
+    .image .news__image-item,
+    .image .news__image-item-item {
+    display: none;
+}
+    .items-info__name .product-image,
+    .items-info__name .news__image-item,
+    .items-info__name .news__image-item-item {
         display: block;
     }
     .catalog {

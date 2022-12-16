@@ -106,7 +106,8 @@ basketItem.forEach(item => {
     });
     plus.addEventListener('click', () => {
         ++amount.innerHTML;
-        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML, img.innerHTML]));
+        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML,
+            units.innerHTML, value.innerHTML, img.innerHTML]));
         location.reload();
         if (+amount.innerHTML > 1) {
             minus.removeAttribute("disabled");
@@ -114,7 +115,8 @@ basketItem.forEach(item => {
     });
     minus.addEventListener('click', () => {
         --amount.innerHTML;
-        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML, img.innerHTML]));
+        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML,
+            units.innerHTML, value.innerHTML, img.innerHTML]));
         location.reload();
         if (+amount.innerHTML == 1) {
             minus.setAttribute("disabled", "disabled");
@@ -417,12 +419,14 @@ if (forAllPositions.innerHTML == 0) {
             }
         });
         basketForDesktop.addEventListener('click', () => {
-            localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML, img.innerHTML]));
+            localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML,
+                units.innerHTML, value.innerHTML, img.innerHTML]));
             location.reload();
             numberOfPosition.style.display = 'flex';
         });
         basketForOther.addEventListener('click', () => {
-            localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML, img.innerHTML]));
+            localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML,
+                units.innerHTML, value.innerHTML, img.innerHTML]));
             location.reload();
         });
 

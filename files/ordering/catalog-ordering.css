@@ -26,7 +26,7 @@ body {
     transition: all 0.7s ease-in-out;
 }
 img[src*="корзина(черн)"] {
-    margin-bottom: 29px;
+    margin-bottom: 0px;
 }
 .header__list-item a {
     text-decoration: none;
@@ -38,6 +38,7 @@ img[src*="корзина(черн)"] {
     color: #121011;
 }
 .header {
+    padding-top: 37px;
     width: 1440px;
     padding-left: 130px;
     display: flex;
@@ -72,7 +73,7 @@ img[src*="корзина(черн)"] {
     width: 18px;
     height: 18px;
     border-radius: 100%;
-    top: -47px;
+    top: -20px;
     right: -9px;
     text-align: center;
     font-family: "Gilroy";
@@ -180,7 +181,7 @@ img[src*="корзина(черн)"] {
     color: #121011;
 }
 /*Каталог*/
-.all-amount-adaptate { 
+.all-amount-adaptate {
     display: none;
 }
 form {
@@ -435,7 +436,7 @@ p.delivery {
     line-height: 28px;
     color: #000000;
     border-bottom: solid 1px #198d9b;
-    padding-left: 35px;
+    padding-left: 50px;
 }
 .delivery-currency {
     font-family: "Cinzel";
@@ -453,7 +454,7 @@ p.delivery {
     font-size: 30px;
     line-height: 40px;
     color: #121011;
-    padding-left: 40px;
+    padding-left: 60px;
 }
 .basket__ordering-value-all {
     font-family: "Cinzel";
@@ -512,7 +513,7 @@ p.delivery {
     font-family: "Cinzel";
     font-style: normal;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 10px;
     line-height: 20px;
 }
 .basket__ordering {
@@ -556,8 +557,11 @@ p.delivery {
 li option {
     border-bottom: solid 1px black;
 }
-.product-image {
+.product-image,
+.news__image-item,
+.news__image-item-item {
     width: 100px;
+    height: 100px;
 }
 /* футер*/
 .footer {
@@ -641,7 +645,7 @@ li option {
     justify-content: center;
     background-image: url("/images/фон.png");
     background-position: center;
-    margin-top: 200px;
+    margin-top: 88px;
 }
 .gratitude .technical {
     width: 41px;

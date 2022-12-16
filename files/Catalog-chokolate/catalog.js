@@ -175,12 +175,14 @@ bodyItemShell.forEach(item => {
         }
     });
     basketForDesktop.addEventListener('click', () => {
-        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML, img.innerHTML]));
+        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML,
+            value.innerHTML, img.innerHTML]));
         location.reload();
         numberOfPosition.style.display = 'flex';
     });
     basketForOther.addEventListener('click', () => {
-        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML, value.innerHTML, img.innerHTML]));
+        localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML, units.innerHTML,
+            value.innerHTML, img.innerHTML]));
         location.reload();
     });
 

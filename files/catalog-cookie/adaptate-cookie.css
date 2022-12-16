@@ -72,6 +72,25 @@
 }
 @media only all and (max-width: 975px) {
     /*header*/
+    .number-of-position {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background-color: #198d9b;
+        width: 18px;
+        height: 18px;
+        border-radius: 100%;
+        top: -47px;
+        right: -9px;
+        text-align: center;
+        font-family: "Gilroy";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 9px;
+        line-height: 10px;
+        color: #ffffff;
+    }
     .header__list {
         display: none;
     }
@@ -84,6 +103,7 @@
         margin-bottom: 7px;
     }
     .header {
+        padding-top: 0;
         position: fixed;
         justify-content: center;
         width: 100%;
