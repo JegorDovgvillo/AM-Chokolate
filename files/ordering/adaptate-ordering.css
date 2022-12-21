@@ -261,6 +261,12 @@
     /*footer*/
 }
 @media only all and (max-width: 650px) {
+    .gratitude {
+        height: 515px;
+    }
+    .catalog {
+        padding: 0px 10px 0px 10px;
+    }
     .gratitude .delivery__text {
         padding: 0px 110px 0px 110px;
         position: absolute;
@@ -404,9 +410,6 @@
     }
 }
 @media only all and (max-width: 420px) {
-    .catalog {
-        padding: 0px 10px 60px 10px;
-    }
     .header__logo {
         padding-left: 60px;
     }
@@ -415,5 +418,8 @@
     }
     .items-info__cross {
         left: 220px;
+    }
+    .gratitude {
+        height: 515px;
     }
 }

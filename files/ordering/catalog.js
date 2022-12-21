@@ -86,7 +86,8 @@ const inputDeliveryFirst = document.getElementsByClassName('pickup')[0],
     deliveryAddress = document.getElementsByClassName('delivery-address')[0],
     readyTime = document.getElementsByClassName('time')[0],
     result = document.getElementsByClassName('basket__ordering-value-all')[0],
-    payment = document.getElementsByClassName('payment')[0];
+    payment = document.getElementsByClassName('payment')[0],
+    paymentText = document.getElementsByClassName('payment-text')[0];
 result.innerHTML = forAllPositions.innerHTML;
 inputDeliveryFirst.onclick = pickupBlock;
 function pickupBlock() {
@@ -100,7 +101,7 @@ function pickupBlock() {
         <option value="п. Солнечный,  ул. Сосновая, д. 2 ">п. Солнечный,  ул. Сосновая, д. 2 </option>
         </select>
     </li>`;
-        payment.innerHTML = 'Оплата при получении';
+        paymentText.innerHTML = 'Оплата при получении';
         payment.setAttribute('value', 'При получении');
         readyTime.innerHTML = '4. Забрать заказ ';
         result.innerHTML = parseInt(forAllPositions.innerHTML);
@@ -126,17 +127,17 @@ function deliveryBlock() {
                     <input type="text" placeholder="Квартира" required name="Квартира">
                 </li>`;
         basketOrderingPrice.style.borderBottom = 'none';
-        payment.innerHTML = 'Оплата курьеру';
+        paymentText.innerHTML = 'Оплата курьеру';
         payment.setAttribute('value', 'Курьеру');
         readyTime.innerHTML = '4. Время доставки ';
         basketOrderingPrice.insertAdjacentHTML('afterend', `
         <p class="delivery">Доставка:
-                    <span class="delivery-value">5</span>
+                    <span class="delivery-value">${parseFloat(forAllPositions.innerHTML) * 15 / 100}</span>
                     <span class="delivery-currency">BYN</span>
                 </p>
         `);
         const delivery = document.getElementsByClassName('delivery-value')[0];
-        result.innerHTML = parseInt(delivery.innerHTML) + parseInt(forAllPositions.innerHTML);
+        result.innerHTML = parseFloat(delivery.innerHTML) + parseFloat(forAllPositions.innerHTML);
         inputDeliverySecond.setAttribute('disabled', 'disabled');
     }
 }
@@ -187,6 +188,7 @@ for (let i = 0; i < localStorage.length; i++) {
         amount = localStorage.getItem(key),
         itemAmount = JSON.parse(amount),
         sum = itemAmount,
+        img = sum.pop(),
         itemSum = sum.pop(),
         itemUnits = sum.pop(),
         grandTotal = itemSum * itemAmount;
@@ -197,21 +199,30 @@ ${parseInt(itemUnits.slice(1, 5)) == 100 ? 'гр.' : 'шт.'} / ${grandTotal}byn
 </input>
 `);
 }
+formElem.insertAdjacentHTML('beforeend', `<input type="text" hidden name="Сумма заказа"
+value='${result.innerHTML}Byn'>
+</input>)
+`);
 const catalog = document.getElementsByClassName('catalog')[0];
 formElem.onsubmit = async (e) => {
     e.preventDefault();
-if(+result.innerHTML < 20) {
-alert('Сумма заказа не менее 20 Byn');
+    if (inputDeliverySecond.checked) {
+        formElem.insertAdjacentHTML('beforeend', `<input type="text" hidden 
+        name="Сумма доставки"
+value='${forAllPositions.innerHTML * 15 / 100}Byn'>
+</input>`);
+    }
+    if (+result.innerHTML < 20) {
+        alert('Сумма заказа не менее 20 Byn');
+    } else {
+        let response = await fetch('#', {
+            method: 'POST',
+            body: new FormData(formElem)
+        });
 
-}else {
-    let response = await fetch('#', {
-        method: 'POST',
-        body: new FormData(formElem)
-    });
-
-    localStorage.clear();
-    catalog.style.display = 'block';
-    catalog.innerHTML = `<div class="gratitude">
+        localStorage.clear();
+        catalog.style.display = 'block';
+        catalog.innerHTML = `<div class="gratitude">
     <div class="delivery__text">
         <h1>БЛАГОДАРИМ ЗА ЗАКАЗ</h1>
         <p>
@@ -224,7 +235,7 @@ alert('Сумма заказа не менее 20 Byn');
         </div>
     </div>
 </div>`;
-}
+    }
 };
 
 

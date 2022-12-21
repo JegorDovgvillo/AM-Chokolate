@@ -287,17 +287,24 @@ bodyItem.forEach(item => {
     if (+amount.value > 1) {
       minus.removeAttribute("disabled");
     }
+    if (+amount.value == 100) {
+      alert(`Извините, Вы не можете добавить более 100 позиций, свяжитесь с нами и Мы все обсудим`);
+      plus.setAttribute("disabled", "disabled");
+    }
   });
   minus.addEventListener('click', () => {
     --amount.value;
     if (+amount.value == 1) {
       minus.setAttribute("disabled", "disabled");
     }
+    if (+amount.value < 100) {
+      plus.removeAttribute("disabled");
+    }
   });
   basketForDesktop.addEventListener('click', (e) => {
     e.preventDefault();
     localStorage.setItem(title.innerHTML, JSON.stringify([amount.value, units.innerHTML,
-      value.innerHTML, img.innerHTML]));
+    value.innerHTML, img.innerHTML]));
     numberOfPosition.style.display = 'flex';
     amount.value = 1;
   });
@@ -491,17 +498,24 @@ function viewChocolateBlock(event) {
       if (+amount.value > 1) {
         minus.removeAttribute("disabled");
       }
+      if (+amount.value == 100) {
+        alert(`Извините, Вы не можете добавить более 100 позиций, свяжитесь с нами и Мы все обсудим`);
+        plus.setAttribute("disabled", "disabled");
+      }
     });
     minus.addEventListener('click', () => {
       --amount.value;
       if (+amount.value == 1) {
         minus.setAttribute("disabled", "disabled");
       }
+      if (+amount.value < 100) {
+        plus.removeAttribute("disabled");
+      }
     });
     basketForDesktop.addEventListener('click', (e) => {
       e.preventDefault();
       localStorage.setItem(title.innerHTML, JSON.stringify([amount.value, units.innerHTML,
-        value.innerHTML, img.innerHTML]));
+      value.innerHTML, img.innerHTML]));
       numberOfPosition.style.display = 'flex';
       amount.value = 1;
     });
@@ -516,9 +530,9 @@ function viewChocolateBlock(event) {
       thirdImage = item.querySelector('.news-img3'),
       itemTitleAdaptate = document.getElementsByClassName('news__subtitle')[0],
       itemTitle = document.getElementsByClassName('news__subtitle')[1],
-    itemPrice = document.getElementsByClassName('news__price__text')[0],
-    itemContent = document.getElementsByClassName('news-content__text')[0],
-    itemCompound = document.getElementsByClassName('news-content__text')[1];
+      itemPrice = document.getElementsByClassName('news__price__text')[0],
+      itemContent = document.getElementsByClassName('news-content__text')[0],
+      itemCompound = document.getElementsByClassName('news-content__text')[1];
     arrowSliderNewNext.addEventListener('click', () => {
       if (secondImage.classList.contains('news-active-img')) {
         mainImageNew.innerHTML = '<img src="/images/DSC_4849 1.png" alt="" width="420" height="523"/>';
@@ -580,7 +594,7 @@ function viewChocolateBlock(event) {
   });
 }
 function viewEclairsBlock(event) {
-    event.preventDefault();
+  event.preventDefault();
   if (tartletsBlock.classList.contains('active-card')) {
     tartletsBlock.classList.remove('active-card');
     eclairsBlock.classList.add('active-card');
@@ -661,17 +675,24 @@ function viewEclairsBlock(event) {
       if (+amount.value > 1) {
         minus.removeAttribute("disabled");
       }
+      if (+amount.value == 100) {
+        alert(`Извините, Вы не можете добавить более 100 позиций, свяжитесь с нами и Мы все обсудим`);
+        plus.setAttribute("disabled", "disabled");
+      }
     });
     minus.addEventListener('click', () => {
       --amount.value;
       if (+amount.value == 1) {
         minus.setAttribute("disabled", "disabled");
       }
+      if (+amount.value < 100) {
+        plus.removeAttribute("disabled");
+      }
     });
     basketForDesktop.addEventListener('click', (e) => {
       e.preventDefault();
       localStorage.setItem(title.innerHTML, JSON.stringify([amount.value, units.innerHTML,
-        value.innerHTML, img.innerHTML]));
+      value.innerHTML, img.innerHTML]));
       numberOfPosition.style.display = 'flex';
       amount.value = 1;
     });
@@ -684,10 +705,10 @@ function viewEclairsBlock(event) {
       firstImage = item.querySelector('.news-img3'),
       secondImage = item.querySelector('.news-img2'),
       itemTitleAdaptate = document.getElementsByClassName('news__subtitle')[0],
-    itemTitle = document.getElementsByClassName('news__subtitle')[1],
-    itemPrice = document.getElementsByClassName('news__price__text')[0],
-    itemContent = document.getElementsByClassName('news-content__text')[0],
-    itemCompound = document.getElementsByClassName('news-content__text')[1],
+      itemTitle = document.getElementsByClassName('news__subtitle')[1],
+      itemPrice = document.getElementsByClassName('news__price__text')[0],
+      itemContent = document.getElementsByClassName('news-content__text')[0],
+      itemCompound = document.getElementsByClassName('news-content__text')[1],
       thirdImage = item.querySelector('.news-img1');
     arrowSliderNewNext.addEventListener('click', () => {
       if (secondImage.classList.contains('news-active-img')) {

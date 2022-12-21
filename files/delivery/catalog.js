@@ -3,7 +3,7 @@ const burgerCross = document.getElementsByClassName('burger__cross')[0],
     burgerMenu = document.getElementsByClassName('burger__menu')[0];
 burgerCross.onclick = ((el) => {
     burgerCross.classList.toggle('active');
-        burgerMenu.classList.toggle('active');
+    burgerMenu.classList.toggle('active');
     document.body.classList.toggle('noscroll');
 });
 

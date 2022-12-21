@@ -1,15 +1,11 @@
-html {
-    height: 100%;
-}
+
 body {
-    display: flex;
+
     margin: 0 auto;
     max-width: 1440px;
     min-width: 375px;
     box-sizing: border-box;
     overflow-x: hidden;
-    height: 100%;
-    min-height: 100%;
     flex-direction: column;
 }
 /*Хэдер*/
@@ -188,7 +184,6 @@ form {
     grid-column: 1;
 }
 .catalog {
-    flex: 1 0 auto;
     grid-template-rows: 0fr;
     padding: 0 130px 110px;
     background-color: #f8f4f0;
@@ -310,7 +305,7 @@ form .technical {
 .amount {
     font-family: "Gilroy";
     font-style: normal;
-    width: 55px;
+    width: 65px;
     font-size: 30px;
     line-height: 35px;
     text-align: center;
@@ -454,7 +449,7 @@ p.delivery {
     font-size: 30px;
     line-height: 40px;
     color: #121011;
-    padding-left: 60px;
+    padding-left: 35px;
 }
 .basket__ordering-value-all {
     font-family: "Cinzel";
@@ -507,6 +502,12 @@ p.delivery {
 }
 .basket__ordering-value {
     padding-left: 40px;
+    font-family: "Cinzel";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 40px;
+    color: #121011;
 }
 .basket__ordering-currency {
     padding-left: 10px;
