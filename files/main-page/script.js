@@ -31,22 +31,24 @@ let i = 614.5,
   j = 1,
   a = 1229.5;
 const menuArrow = document.getElementsByClassName('menu-arrow')[0],
+  menuArrowBack = document.getElementsByClassName('menu-arrow-back')[1],
   menuPosition = document.getElementsByClassName('menu-position')[0],
   menuPositionLast = document.getElementsByClassName('menu-position-last')[0],
   cardMenu = document.getElementsByClassName('menu-card')[0],
   firstPage = document.getElementsByClassName('menu-page-first')[0],
   secondPage = document.getElementsByClassName('menu-page-second')[0],
-  menuArrowNext = document.getElementsByClassName('menu-arrow-next')[0],
-  menuArrowBack = document.getElementsByClassName('menu-arrow-back')[0],
+  menuArrowNextAdaptate = document.getElementsByClassName('menu-arrow-next')[0],
+  menuArrowBackAdaptate = document.getElementsByClassName('menu-arrow-back')[0],
   thirdPage = document.getElementsByClassName('menu-page-third')[0];
-menuArrowNext.onclick = scrollMenuNextOnArrow;
-menuArrowBack.onclick = scrollMenuBackOnArrow;
+menuArrowNextAdaptate.onclick = scrollMenuNextOnArrow;
+menuArrowBackAdaptate.onclick = scrollMenuBackOnArrow;
 menuArrow.onclick = scrolOnArrowNext;
+menuArrowBack.onclick = scrolOnArrowBack;
 secondPage.onclick = scrollToSecondPage;
 thirdPage.onclick = scrollToThirdPage;
 firstPage.onclick = scrollToFirstPage;
-menuArrowBack.setAttribute('disabled', 'disabled');
-menuArrowBack.classList.add('disabled-menu-arrow');
+menuArrowBackAdaptate.setAttribute('disabled', 'disabled');
+menuArrowBackAdaptate.classList.add('disabled-menu-arrow');
 function scrollMenuNextOnArrow() {
   cardMenu.style.right = 0 + i + 'px';
   i += 615;
@@ -54,12 +56,12 @@ function scrollMenuNextOnArrow() {
   menuPosition.innerHTML = j;
 
   if (j == 6) {
-    menuArrowNext.setAttribute('disabled', 'disabled');
-    menuArrowNext.classList.add('disabled-menu-arrow');
+    menuArrowNextAdaptate.setAttribute('disabled', 'disabled');
+    menuArrowNextAdaptate.classList.add('disabled-menu-arrow');
   }
   if (j > 1) {
-    menuArrowBack.removeAttribute('disabled', 'disabled');
-    menuArrowBack.classList.remove('disabled-menu-arrow');
+    menuArrowBackAdaptate.removeAttribute('disabled', 'disabled');
+    menuArrowBackAdaptate.classList.remove('disabled-menu-arrow');
   }
 
 }
@@ -69,12 +71,12 @@ function scrollMenuBackOnArrow() {
   menuPosition.innerHTML = j;
   i -= 615;
   if (j < 6) {
-    menuArrowNext.removeAttribute('disabled', 'disabled');
-    menuArrowNext.classList.remove('disabled-menu-arrow');
+    menuArrowNextAdaptate.removeAttribute('disabled', 'disabled');
+    menuArrowNextAdaptate.classList.remove('disabled-menu-arrow');
   }
   if (j == 1) {
-    menuArrowBack.setAttribute('disabled', 'disabled');
-    menuArrowBack.classList.add('disabled-menu-arrow');
+    menuArrowBackAdaptate.setAttribute('disabled', 'disabled');
+    menuArrowBackAdaptate.classList.add('disabled-menu-arrow');
   }
 }
 function scrollToSecondPage(el) {
@@ -82,6 +84,7 @@ function scrollToSecondPage(el) {
     cardMenu.classList.toggle('active-menu');
     secondPage.classList.add('active');
     firstPage.classList.remove('active');
+    menuArrowBack.classList.remove('disabled-menu-arrow');
     if (window.getComputedStyle(thirdPage).display == 'none') {
       menuArrow.setAttribute('disabled', 'disabled');
       menuArrow.classList.add('disabled-menu-arrow');
@@ -108,6 +111,7 @@ function scrollToFirstPage(el) {
     cardMenu.classList.remove('active-menu');
     firstPage.classList.add('active');
     secondPage.classList.remove('active');
+    menuArrowBack.classList.add('disabled-menu-arrow');
   }
   if (window.getComputedStyle(thirdPage).display == 'none') {
     menuArrow.removeAttribute('disabled');
@@ -119,8 +123,14 @@ function scrolOnArrowNext(el) {
     scrollToSecondPage();
   } else if (secondPage.classList.contains('active')) {
     scrollToThirdPage();
-    menuArrow.setAttribute('disabled', 'disabled');
-    menuArrow.classList.add('disabled-menu-arrow');
+  }
+}
+menuArrowBack.classList.add('disabled-menu-arrow');
+function scrolOnArrowBack(el) {
+  if (secondPage.classList.contains('active')) {
+    scrollToFirstPage();
+  } else if (thirdPage.classList.contains('active')) {
+    scrollToSecondPage();
   }
 }
 //Отзывы
@@ -128,6 +138,7 @@ let b = 602,
   d = 1,
   c = 1204;
 const reviewsArrow = document.getElementsByClassName('reviews-arrow')[0],
+  reviewsArrowBack = document.getElementsByClassName('reviews-arrow-back')[1],
   reviewsCard = document.getElementsByClassName('reviews-card')[0],
   reviewsPosition = document.getElementsByClassName('reviews-position')[0],
   reviewsFirstPage = document.getElementsByClassName('reviews-first-page')[0],
@@ -136,29 +147,30 @@ const reviewsArrow = document.getElementsByClassName('reviews-arrow')[0],
   reviewsFourthPage = document.getElementsByClassName('reviews-fourth-page')[0],
   reviewsFifthPage = document.getElementsByClassName('reviews-fifth-page')[0],
   reviewsSixthPage = document.getElementsByClassName('reviews-sixth-page')[0],
-  reviewsArrowBack = document.getElementsByClassName('reviews-arrow-back')[0],
-  reviewsArrowNext = document.getElementsByClassName('reviews-arrow-next')[0];
+  reviewsArrowBackAdaptate = document.getElementsByClassName('reviews-arrow-back')[0],
+  reviewsArrowNextAdaptate = document.getElementsByClassName('reviews-arrow-next')[0];
 reviewsArrow.onclick = scrolOnArrowNextReviews;
-reviewsSecondPage.onclick = scrollToSecondPageReviews;
+reviewsArrowBack.onclick = scrolOnArrowBackReviews;
+  reviewsSecondPage.onclick = scrollToSecondPageReviews;
 reviewsThirdPage.onclick = scrollToThirdPageReviews;
 reviewsFourthPage.onclick = scrollToFourthPageReviews;
 reviewsFirstPage.onclick = scrollBack;
-reviewsArrowBack.onclick = scrollOnArrowBackReviews;
-reviewsArrowNext.onclick = scrollOnArrowNextReviews;
-reviewsArrowBack.setAttribute('disabled', 'disabled');
-reviewsArrowBack.classList.add('disabled-menu-arrow');
+reviewsArrowBackAdaptate.onclick = scrollOnArrowBackReviews;
+reviewsArrowNextAdaptate.onclick = scrollOnArrowNextReviews;
+reviewsArrowBackAdaptate.setAttribute('disabled', 'disabled');
+reviewsArrowBackAdaptate.classList.add('disabled-menu-arrow');
 function scrollOnArrowBackReviews() {
   reviewsCard.style.right = b - c + 'px';
   --d;
   reviewsPosition.innerHTML = d;
   b -= 602;
   if (d < 12) {
-    reviewsArrowNext.removeAttribute('disabled', 'disabled');
-    reviewsArrowNext.classList.remove('disabled-menu-arrow');
+    reviewsArrowNextAdaptate.removeAttribute('disabled', 'disabled');
+    reviewsArrowNextAdaptate.classList.remove('disabled-menu-arrow');
   }
   if (d == 1) {
-    reviewsArrowBack.setAttribute('disabled', 'disabled');
-    reviewsArrowBack.classList.add('disabled-menu-arrow');
+    reviewsArrowBackAdaptate.setAttribute('disabled', 'disabled');
+    reviewsArrowBackAdaptate.classList.add('disabled-menu-arrow');
   }
 }
 
@@ -169,12 +181,12 @@ function scrollOnArrowNextReviews() {
   reviewsPosition.innerHTML = d;
 
   if (d == 12) {
-    reviewsArrowNext.setAttribute('disabled', 'disabled');
-    reviewsArrowNext.classList.add('disabled-menu-arrow');
+    reviewsArrowNextAdaptate.setAttribute('disabled', 'disabled');
+    reviewsArrowNextAdaptate.classList.add('disabled-menu-arrow');
   }
   if (d > 1) {
-    reviewsArrowBack.removeAttribute('disabled', 'disabled');
-    reviewsArrowBack.classList.remove('disabled-menu-arrow');
+    reviewsArrowBackAdaptate.removeAttribute('disabled', 'disabled');
+    reviewsArrowBackAdaptate.classList.remove('disabled-menu-arrow');
   }
 
 }
@@ -184,6 +196,8 @@ function scrollToSecondPageReviews(el) {
     reviewsCard.classList.toggle('active-reviews-second');
     reviewsSecondPage.classList.add('active');
     reviewsFirstPage.classList.remove('active');
+    reviewsArrowBack.removeAttribute('disabled');
+    reviewsArrowBack.classList.remove('disabled-menu-arrow');
   } else if (reviewsThirdPage.classList.contains('active')) {
     reviewsCard.classList.remove('active-reviews-third');
     reviewsSecondPage.classList.add('active');
@@ -226,6 +240,8 @@ function scrollBack(el) {
     reviewsCard.classList.remove('active-reviews-second');
     reviewsFirstPage.classList.add('active');
     reviewsSecondPage.classList.remove('active');
+    reviewsArrowBack.setAttribute('disabled', 'disabled');
+    reviewsArrowBack.classList.add('disabled-menu-arrow');
   }
 }
 function scrolOnArrowNextReviews(el) {
@@ -242,6 +258,24 @@ function scrolOnArrowNextReviews(el) {
     scrollToSixthPageReviews();
     reviewsArrow.setAttribute('disabled', 'disabled');
     reviewsArrow.classList.add('disabled-menu-arrow');
+  }
+}
+reviewsArrowBack.setAttribute('disabled', 'disabled');
+reviewsArrowBack.classList.add('disabled-menu-arrow');
+function scrolOnArrowBackReviews(el) {
+  if (window.getComputedStyle(reviewsSixthPage).display == 'block' &&
+    reviewsSixthPage.classList.contains('active')) {
+    scrollToFifthPageReviews();
+  } else if (reviewsFifthPage.classList.contains('active')) {
+    scrollToFourthPageReviews();
+  } else if (reviewsFourthPage.classList.contains('active')) {
+    scrollToThirdPageReviews();
+  } else if (reviewsThirdPage.classList.contains('active')) {
+    scrollToSecondPageReviews();
+  } else if (reviewsSecondPage.classList.contains('active')) {
+    scrollBack();
+    reviewsArrowBack.setAttribute('disabled', 'disabled');
+    reviewsArrowBack.classList.add('disabled-menu-arrow');
   }
 }
 if (window.getComputedStyle(reviewsFifthPage).display == 'block') {
@@ -307,6 +341,7 @@ bodyItem.forEach(item => {
     value.innerHTML, img.innerHTML]));
     numberOfPosition.style.display = 'flex';
     amount.value = 1;
+    location.reload();
   });
 });
 //слайдер интро
@@ -402,7 +437,7 @@ formElem.onsubmit = async (e) => {
     method: 'POST',
     body: new FormData(formElem)
   });
-
+  formElem.reset();
 };
 
 // новинки
@@ -518,6 +553,7 @@ function viewChocolateBlock(event) {
       value.innerHTML, img.innerHTML]));
       numberOfPosition.style.display = 'flex';
       amount.value = 1;
+      location.reload();
     });
   });
   const sliderImagesNew = document.querySelectorAll('.news__image__slider'),
@@ -695,6 +731,7 @@ function viewEclairsBlock(event) {
       value.innerHTML, img.innerHTML]));
       numberOfPosition.style.display = 'flex';
       amount.value = 1;
+      location.reload();
     });
   });
   const sliderImagesNew = document.querySelectorAll('.news__image__slider'),
@@ -843,3 +880,4 @@ sliderImagesNew.forEach(item => {
     }
   });
 });
+

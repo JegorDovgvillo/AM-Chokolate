@@ -11,6 +11,7 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
+    background: rgba(248, 244, 240, 1);
 }
 /*Хэдер*/
 .header__list {
@@ -42,7 +43,6 @@ img[src*="корзина(черн)"] {
     width: 1440px;
     padding-left: 130px;
     display: flex;
-    background-color: #f8f4f0;
     align-items: flex-end;
     z-index: 10;
     flex-direction: row;
@@ -175,7 +175,7 @@ img[src*="корзина(черн)"] {
 .selections {
     display: none;
     z-index: 5;
-    top: 295px;
+    top: 365px;
     position: absolute;
     background-color: #f8f4f0;
     box-shadow: 0px 54px 21px rgba(82, 82, 81, 0.01), 0px 30px 18px rgba(82, 82, 81, 0.05),
@@ -230,7 +230,6 @@ img[src*="корзина(черн)"] {
 .catalog {
     flex: 1 0 auto;
     padding: 0 130px 110px;
-    background-color: #f8f4f0;
     overflow: hidden;
 }
 .activeCatalog {
@@ -485,14 +484,14 @@ img[src*="корзина(черн)"] {
 .scroll-buttons__arrow:disabled {
     opacity: 0.3;
 }
-.scroll-buttons__arrow-back,
 .scroll-buttons__position-first,
 .scroll-buttons__position-second,
 .scroll-buttons__position-separator {
     display: none;
 }
 .scroll-buttons__arrow-back {
-    margin-right: 33px;
+    margin-right: 20px;
+    display: block;
 }
 .scroll-buttons__position-first,
 .scroll-buttons__position-second {
@@ -640,6 +639,7 @@ img[src*="корзина(черн)"] {
 .footer__contacts a {
     text-decoration: none;
     margin-bottom: 27px;
+    margin-right: 16px;
 }
 .activeTriangle:hover {
     transition: all 0.7s ease-in-out;

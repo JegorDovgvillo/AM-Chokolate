@@ -14,16 +14,31 @@ const popularBlock = document.getElementsByClassName('catalog__popular')[0],
     allPageNumber = document.getElementsByClassName('scroll-buttons__position-second')[0],
     scrollButtonBack = document.getElementsByClassName('scroll-buttons__arrow-back')[0];
 scrollButtonNext.onclick = scrolOnArrowNext;
-scrollButtonBack.onclick = scrolOnArrowBack;
+
 firstPage.onclick = scrollBack;
 secondPage.onclick = scrollNext;
 scrollButtonBack.setAttribute("disabled", "disabled");
+window.addEventListener('DOMContentLoaded', () => {
+    if (window.innerWidth < 790) {
+        scrollButtonBack.onclick = scrolOnArrowBack;
+    } else if (window.innerWidth > 790) {
+        scrollButtonBack.onclick = scrollBack;
+    }
+});
+window.addEventListener('resize', function () {
+    if (window.innerWidth < 790) {
+        scrollButtonBack.onclick = scrolOnArrowBack;
+    } else if (window.innerWidth > 790) {
+        scrollButtonBack.onclick = scrollBack;
+    }
+});
 function scrollNext(el) {
     if (firstPage.classList.contains('active')) {
         popularBlock.classList.toggle('active');
         secondPage.classList.add('active');
         firstPage.classList.remove('active');
         scrollButtonNext.setAttribute("disabled", "disabled");
+        scrollButtonBack.removeAttribute("disabled");
     }
 }
 function scrollBack(el) {
@@ -32,6 +47,7 @@ function scrollBack(el) {
         firstPage.classList.add('active');
         secondPage.classList.remove('active');
         scrollButtonNext.removeAttribute("disabled");
+        scrollButtonBack.setAttribute("disabled", "disabled");
     }
 }
 function scrolOnArrowBack(el) {
@@ -164,15 +180,15 @@ bodyItemShell.forEach(item => {
     });
     basketForDesktop.addEventListener('click', () => {
         localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML,
-            units.innerHTML,
-            value.innerHTML, img.innerHTML]));
+        units.innerHTML,
+        value.innerHTML, img.innerHTML]));
         location.reload();
         numberOfPosition.style.display = 'flex';
     });
     basketForOther.addEventListener('click', () => {
         localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML,
-            units.innerHTML,
-            value.innerHTML, img.innerHTML]));
+        units.innerHTML,
+        value.innerHTML, img.innerHTML]));
         location.reload();
     });
 

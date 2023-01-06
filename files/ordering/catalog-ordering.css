@@ -1,12 +1,12 @@
-
 body {
-
     margin: 0 auto;
     max-width: 1440px;
     min-width: 375px;
     box-sizing: border-box;
     overflow-x: hidden;
     flex-direction: column;
+    background: rgba(248, 244, 240, 1);
+
 }
 /*Хэдер*/
 .header__list {
@@ -38,7 +38,6 @@ img[src*="корзина(черн)"] {
     width: 1440px;
     padding-left: 130px;
     display: flex;
-    background-color: #f8f4f0;
     align-items: flex-end;
     z-index: 10;
     flex-direction: row;
@@ -633,6 +632,7 @@ li option {
 .footer__contacts a {
     text-decoration: none;
     margin-bottom: 27px;
+    margin-right: 16px;
 }
 /*Благодарность*/
 .gratitude {

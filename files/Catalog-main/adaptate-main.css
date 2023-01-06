@@ -166,7 +166,7 @@
         transition: all 0.7s ease-in-out;
     }
     .burger__menu.active {
-        top: 136px;
+        top: 137px;
         height: 100%;
     }
     .burger__list {
@@ -347,7 +347,7 @@
         top: -6px;
     }
     .burger__menu.active {
-        top: 137px;
+        top: 136px;
     }
     /*footer*/
 }

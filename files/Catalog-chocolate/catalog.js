@@ -29,19 +29,33 @@ const popularBlock = document.getElementsByClassName('catalog__popular')[0],
     scrollButtonNext = document.getElementsByClassName('scroll-buttons__arrow')[0],
     currentPageNumber = document.getElementsByClassName('scroll-buttons__position-first')[0],
     allPageNumber = document.getElementsByClassName('scroll-buttons__position-second')[0],
-    scrollButtonBack = document.getElementsByClassName('scroll-buttons__arrow-back')[0],
-    bodyItemShell = document.querySelectorAll('.catalog__body-shell');
+    scrollButtonBack = document.getElementsByClassName('scroll-buttons__arrow-back')[0];
 scrollButtonNext.onclick = scrolOnArrowNext;
-scrollButtonBack.onclick = scrolOnArrowBack;
+
 firstPage.onclick = scrollBack;
 secondPage.onclick = scrollNext;
 scrollButtonBack.setAttribute("disabled", "disabled");
+window.addEventListener('DOMContentLoaded', () => {
+    if (window.innerWidth < 790) {
+        scrollButtonBack.onclick = scrolOnArrowBack;
+    } else if (window.innerWidth > 790) {
+        scrollButtonBack.onclick = scrollBack;
+    }
+});
+window.addEventListener('resize', function () {
+    if (window.innerWidth < 790) {
+        scrollButtonBack.onclick = scrolOnArrowBack;
+    } else if (window.innerWidth > 790) {
+        scrollButtonBack.onclick = scrollBack;
+    }
+});
 function scrollNext(el) {
     if (firstPage.classList.contains('active')) {
         popularBlock.classList.toggle('active');
         secondPage.classList.add('active');
         firstPage.classList.remove('active');
         scrollButtonNext.setAttribute("disabled", "disabled");
+        scrollButtonBack.removeAttribute("disabled");
     }
 }
 function scrollBack(el) {
@@ -50,6 +64,7 @@ function scrollBack(el) {
         firstPage.classList.add('active');
         secondPage.classList.remove('active');
         scrollButtonNext.removeAttribute("disabled");
+        scrollButtonBack.setAttribute("disabled", "disabled");
     }
 }
 function scrolOnArrowBack(el) {
@@ -69,7 +84,6 @@ function scrolOnArrowBack(el) {
     }
     scrollButtonNext.removeAttribute("disabled");
 }
-
 function scrolOnArrowNext(el) {
     scrollNext();
     if (window.getComputedStyle(firstPage).display == 'none') {
@@ -94,7 +108,7 @@ function scrolOnArrowNext(el) {
     }
     scrollButtonBack.removeAttribute("disabled");
 }
-
+const bodyItemShell = document.querySelectorAll('.catalog__body-shell');
 bodyItemShell.forEach(item => {
     const imgOnClick = item.querySelector('.image-on-click');
     imgOnClick.addEventListener('click', () => {
@@ -203,3 +217,109 @@ function viewCategory() {
     navigationList.classList.toggle('navigation-list__active');
     categoryTriangle.classList.toggle('categoryActiveTriangle');
 }
+
+// class MenuCard {
+//     constructor(title, img, price, descr, units, alt, composition, parent) {
+//         this.title = title;
+//         this.img = img;
+//         this.price = price;
+//         this.descr = descr;
+//         this.units = units;
+//         this.alt = alt;
+//         this.composition = composition;
+//         this.parent = document.querySelector(parent);
+//     }
+
+//     render() {
+
+//         const element = document.createElement('div');
+//         element.classList.add('catalog__body-shell');
+        
+//         element.innerHTML = `
+//                 <div class="catalog__body-item">
+//                     <div class="catalog__body-header-group">
+//                         <h3>${this.title}</h3>
+//                         <img class="cross" src="/images/крестик.png">
+//                     </div>
+//                     <div class="image">
+//                         <img class="image-on-click product-image" src=${this.img} alt=${this.alt}>
+//                     </div>
+//                     <div class="items-info">
+//                         <div class="items-info__currency">
+//                             <span class="value">${this.price}</span>
+//                             <div class="items-info__apiece">
+//                                 <span class="currency">BYN</span>
+//                                 <span class="units">(${this.units})</span>
+//                             </div>
+//                             <button class="basket-adaptate"><img src="/images/корзина.svg"></button>
+//                         </div>
+//                         <div class="items-info__operation">
+//                             <input type="button" class="minus" value="-">
+//                             <span class="amount">1</span>
+//                             <input type="button" class="plus" value="+">
+//                             <button class="basket-desktop"><img src="/images/корзина.svg"></button>
+//                         </div>
+//                     </div>
+//                     <div class="items-info__operation-onclick">
+//                         <h4>Описание:</h4>
+//                         <p>${this.descr}
+//                         <h4>Состав:</h4>
+//                         <p>${this.composition}</p>
+//                     </div>
+//     `;
+//         this.parent.append(element);
+//         const bodyItemShell = document.querySelectorAll('.catalog__body-shell');
+//         bodyItemShell.forEach(item => {
+//             const imgOnClick = item.querySelector('.image-on-click');
+//             imgOnClick.addEventListener('click', () => {
+//                 const bodyItem = item.querySelector('.catalog__body-item'),
+//                     itemsInfo = item.querySelector('.items-info'),
+//                     itemsInfoOnClick = item.querySelector('.items-info__operation-onclick'),
+//                     imgOnClick = item.querySelector('.image-on-click'),
+//                     itemTitle = item.querySelector('h3'),
+//                     cross = item.querySelector('.cross');
+//                 itemsInfoOnClick.classList.add('activeInfo');
+//                 itemsInfo.classList.add('unactiveInfo');
+//                 imgOnClick.style.padding = '0px';
+//                 imgOnClick.style.width = '161px';
+//                 bodyItem.classList.add('activeItem');
+//                 itemTitle.style.fontSize = '25px';
+//                 itemTitle.style.paddingLeft = '45px';
+//                 item.classList.add('activeBodyShell');
+//                 cross.classList.add('activeCross');
+//             });
+//             const cross = item.querySelector('.cross');
+//             cross.addEventListener('click', () => {
+//                 const bodyItem = item.querySelector('.catalog__body-item'),
+//                     itemsInfo = item.querySelector('.items-info'),
+//                     itemsInfoOnClick = item.querySelector('.items-info__operation-onclick'),
+//                     imgOnClick = item.querySelector('.image-on-click'),
+//                     itemTitle = item.querySelector('h3'),
+//                     cross = item.querySelector('.cross');
+//                 itemsInfoOnClick.classList.remove('activeInfo');
+//                 itemsInfo.classList.remove('unactiveInfo');
+//                 imgOnClick.style.padding = '42px';
+//                 imgOnClick.style.width = '302px';
+//                 bodyItem.classList.remove('activeItem');
+//                 itemTitle.style.fontSize = '20px';
+//                 itemTitle.style.paddingLeft = '0px';
+//                 item.classList.remove('activeBodyShell');
+//                 cross.classList.remove('activeCross');
+//             });
+//         });
+//     }
+
+// }
+// getResource('http://localhost:3000/menu')
+//     .then(data => {
+//         data.forEach(({ title, img, price, descr, units, alt, composition }) => {
+//             new MenuCard(title, img, price, descr, units, alt, composition, '.catalog__body').render();
+//         });
+//     });
+// async function getResource(url) {
+//     let res = await fetch(url);
+//     if (!res.ok) {
+//         throw new Error(`Could not fetch ${url}, status: ${res.status}`);
+//     }
+//     return await res.json();
+// }

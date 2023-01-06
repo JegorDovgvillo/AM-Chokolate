@@ -11,6 +11,7 @@ body {
     overflow-x: hidden;
     height: 100%;
     min-height: 100%;
+    background: rgba(248, 244, 240, 1);
 }
 /*Хэдер*/
 .header__list {
@@ -42,7 +43,6 @@ img[src*="корзина(черн)"] {
     width: 1440px;
     padding-left: 130px;
     display: flex;
-    background-color: #f8f4f0;
     align-items: flex-end;
     z-index: 10;
     flex-direction: row;
@@ -176,7 +176,6 @@ img[src*="корзина(черн)"] {
 .catalog {
     flex: 1 0 auto;
     padding: 0 130px 110px;
-    background-color: #f8f4f0;
     overflow: hidden;
 }
 h1 {
@@ -330,4 +329,5 @@ h5 {
 .footer__contacts a {
     text-decoration: none;
     margin-bottom: 27px;
+    margin-right: 16px;
 }

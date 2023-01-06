@@ -25,6 +25,7 @@ for (let links of listItems) {
 }
 const numberOfPosition = document.getElementsByClassName('number-of-position')[0];
 numberOfPosition.innerHTML = localStorage.length;
+
 const basket = document.getElementsByClassName('basket')[0];
 
 for (let i = 0; i < localStorage.length; i++) {
@@ -76,6 +77,9 @@ basketItem.forEach(item => {
         item.remove();
         localStorage.removeItem(title.innerHTML);
         location.reload();
+        if(localStorage.length == 0) {
+            location.replace('/basket/basket.html');
+        }
     });
 });
 
@@ -199,18 +203,23 @@ ${parseInt(itemUnits.slice(1, 5)) == 100 ? 'гр.' : 'шт.'} / ${grandTotal}byn
 </input>
 `);
 }
-formElem.insertAdjacentHTML('beforeend', `<input type="text" hidden name="Сумма заказа"
+formElem.insertAdjacentHTML('beforeend',
+    `
+<input type="text" hidden name="Сумма товаров"
 value='${result.innerHTML}Byn'>
-</input>)
+</input>
 `);
 const catalog = document.getElementsByClassName('catalog')[0];
 formElem.onsubmit = async (e) => {
     e.preventDefault();
     if (inputDeliverySecond.checked) {
-        formElem.insertAdjacentHTML('beforeend', `<input type="text" hidden 
+        formElem.insertAdjacentHTML('beforeend',
+            `
+        <input type="text" hidden 
         name="Сумма доставки"
-value='${forAllPositions.innerHTML * 15 / 100}Byn'>
-</input>`);
+        value='${forAllPositions.innerHTML * 15 / 100}Byn'>
+        </input>`
+        );
     }
     if (+result.innerHTML < 20) {
         alert('Сумма заказа не менее 20 Byn');
@@ -239,24 +248,4 @@ value='${forAllPositions.innerHTML * 15 / 100}Byn'>
 };
 
 
-// (function () {
-//     var xhr = new XMLHttpRequest();
 
-//     xhr.open('GET', '#');
-
-//     xhr.send();
-//     xhr.onload = function () {
-//         var statusType = Math.round(this.status / 100);
-
-//         console.log((statusType === 2) ? JSON.parse(this.response).data : this.status);
-//         let resultFromServer = JSON.parse(this.response);
-//         console.log(resultFromServer);
-//     };
-//     xhr.onerror = function () {
-//         console.error(this.status);
-//     };
-
-//     xhr.onloadend = function () {
-//         console.log('Запрос завершен');
-//     };
-// })();

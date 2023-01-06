@@ -104,6 +104,9 @@ basketItem.forEach(item => {
         localStorage.removeItem(title.innerHTML);
         location.reload();
     });
+    if (+amount.innerHTML == 100) {
+        plus.setAttribute("disabled", "disabled");
+    }
     plus.addEventListener('click', () => {
         ++amount.innerHTML;
         localStorage.setItem(title.innerHTML, JSON.stringify([amount.innerHTML,
@@ -111,6 +114,9 @@ basketItem.forEach(item => {
         location.reload();
         if (+amount.innerHTML > 1) {
             minus.removeAttribute("disabled");
+        }
+        if (+amount.innerHTML == 100) {
+            alert(`Извините, Вы не можете добавить более 100 позиций, свяжитесь с нами и Мы все обсудим`);
         }
     });
     minus.addEventListener('click', () => {

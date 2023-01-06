@@ -41,10 +41,10 @@
                         <a class="link" href="#reviews">Отзывы</a>
                       </li>
                       <li class="header__list-item">
-                        <a class="link" href="#contacts" target="_blank">Контакты</a>
+                        <a class="link" href="#contacts">Контакты</a>
                       </li>
                       <li class="header__list-item">
-                        <a class="link" href="#" target="_blank">Доставка и оплата</a>
+                        <a class="link" href="/delivery/delivery.html" target="_blank">Доставка и оплата</a>
                       </li>
                     </ul>
                   </nav>
@@ -192,7 +192,7 @@
     </div>
   </header>
   <main>
-    <section class="intro" id="about">
+    <section class="intro" >
       <div class="container container-md container-sm">
         <div class="d-flex-intro justify-content-around">
           <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" class="intro__content">
@@ -215,7 +215,7 @@
                     fill="#121011" />
                 </svg>
               </a>
-              <a href="https://www.instagram.com/invites/contact/?i=18yz8ubppu9iu&utm_content=eyf3qja" target="_blank">
+              <a href="https://www.instagram.com/amchocolate.by/" target="_blank">
                 <svg class="instagram" xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 50 50" width="30"
                   height="30">
                   <path fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="2"
@@ -245,19 +245,19 @@
       <div class="container container-md container-sm">
         <div class="d-flex-about justify-content-around">
           <div data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="1000" class="about__content">
-            <h2 class="about__title">О НАС</h2>
-            <p class="about__text">
-              <span>AM CHOCOLATE</span> - минская сеть кондитерских. На
+            <h2 class="about__title" id="about">О НАС</h2>
+            <p class="about__text" >
+              <span >AM CHOCOLATE</span> - минская сеть кондитерских. На
               протяжении 18-ти лет мы готовим различные десерты для людей с
               разными вкусами, но одинаково серьезными требованиями к
               качеству.
             </p>
-            <p class="about__text">
+            <p class="about__text" >
               С каждым днем мы меняемся к лучшему. Каждый наш рецепт
               проработан до мелочей. Что делает наши изделия особенными и
               неповторимыми. Об этом говорят наши многочисленные отзывы.
             </p>
-            <p class="about__text">
+            <p class="about__text" >
               Все наши продукты мы готовим с любовью исключительно из
               качественных и натуральных ингредиентов.
             </p>
@@ -291,7 +291,7 @@
               <span class="scroll-buttons__position-first">3</span>
               <span class="scroll-buttons__position-separator">/</span>
               <span class="scroll-buttons__position-second">5</span>
-              <button class="scroll-buttons__arrow">
+              <button class="scroll-buttons__arrow" >
                 <img src="/images/стрелка.png" class="adaptate-arrow-next">
               </button>
             </div>
@@ -467,6 +467,9 @@
           </button>
         </div>
         <div class="menu__counter">
+          <button class="menu-arrow-back">
+            <img src="/images/стрелка назад.png">
+          </button>
           <input type="button" value="1" class="menu__counter__value menu-page-first active" />
           <input type="button" value="2" class="menu__counter__value menu-page-second" />
           <input type="button" value="3" class="menu__counter__value menu-page-third" />
@@ -563,7 +566,7 @@
             </p>
             <div class="btn-body btn-news">
               <div class="technical technical-news"></div>
-              <a href="#!" id="reviews">Купить</a>
+              <a href="#!" >Купить</a>
             </div>
           </div>
         </div>
@@ -572,9 +575,9 @@
 
     <section class="reviews">
       <div class="container container-md container-sm">
-        <h1 class="reviews__title">ЧТО ГОВОРЯТ НАШИ КЛИЕНТЫ?</h1>
+        <h1 class="reviews__title" id="reviews">ЧТО ГОВОРЯТ НАШИ КЛИЕНТЫ?</h1>
 
-        <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" class="reviews-card">
+        <div class="reviews-card">
           <div class="card first">
             <div class="card-body">
               <p class="card__review">
@@ -585,7 +588,7 @@
               </p>
               <div class="card-address">
                 <div class="card-address__img">
-                  <img src="/images/clients-icon.png" alt="" />
+                  <img src="/images/clients-icon.png" />
                 </div>
                 <p class="card-address__text">Немига 3</p>
               </div>
@@ -819,6 +822,9 @@
           </button>
         </div>
         <div class="menu__counter">
+          <button class="reviews-arrow-back">
+            <img src="/images/стрелка назад.png">
+          </button>
           <input type="button" value="1" class="menu__counter__value reviews-first-page active" />
           <input type="button" value="2" class="menu__counter__value reviews-second-page" />
           <input type="button" value="3" class="menu__counter__value reviews-third-page" />
@@ -847,9 +853,10 @@
               Заполните форму и мы свяжемся с вами в самое ближайшее время
             </p>
             <form action="!#" method="post" enctype="multipart/form-data">
-              <input class="question-input" type="text" name="Имя пользователя" placeholder="Ваше имя" id="" />
+              <input class="question-input" type="text" name="Имя пользователя" 
+              placeholder="Ваше имя" required />
               <input class="question-input" type="tel" name="Номер телефона пользователя"
-                placeholder="Ваш номер телефона" id="" />
+                placeholder="Ваш номер телефона"  />
               <div>
                 <div class="technical questions-technical"></div>
                 <button type="submit" class=" questions__button">
@@ -913,7 +920,7 @@
                         fill="#121011" />
                     </svg>
                   </a>
-                  <a href="https://www.instagram.com/invites/contact/?i=18yz8ubppu9iu&utm_content=eyf3qja"
+                  <a href="https://www.instagram.com/amchocolate.by/"
                     target="_blank">
                     <svg class="instagram" xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 50 50"
                       width="21" height="21">
@@ -1100,7 +1107,7 @@
                   fill="#121011" />
               </svg>
             </a>
-            <a href="https://www.instagram.com/invites/contact/?i=18yz8ubppu9iu&utm_content=eyf3qja" target="_blank">
+            <a href="https://www.instagram.com/amchocolate.by/" target="_blank">
               <svg class="instagram" xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 50 50" width="30px"
                 height="30px">
                 <path fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="2"

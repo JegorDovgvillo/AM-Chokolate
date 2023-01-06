@@ -141,7 +141,7 @@
         transition: all 0.7s ease-in-out;
     }
     .burger__menu.active {
-        top: 136px;
+        top: 137px;
         height: 100%;
     }
     .burger__list {
@@ -237,15 +237,15 @@
         top: -6px;
     }
     .burger__menu.active {
-        top: 137px;
+        top: 136px;
     }
     /*catalog*/
-    
+
     .image .product-image,
     .image .news__image-item,
     .image .news__image-item-item {
-    display: none;
-}
+        display: none;
+    }
     .items-info__name .product-image,
     .items-info__name .news__image-item,
     .items-info__name .news__image-item-item {
@@ -340,6 +340,9 @@
     .scroll-buttons__position-separator {
         display: block;
     }
+    .scroll-buttons__arrow-back {
+        margin-right: 33px;
+    }
     .scroll-buttons__first,
     .scroll-buttons__second {
         display: none;
@@ -386,13 +389,13 @@
         margin: 0px 20px 0px 0px;
     }
     .active-first-item {
-        right: 340px;
+        right: 347px;
     }
     .active-second-item {
-        right: 685px;
+        right: 700px;
     }
     .active-third-item {
-        right: 1028px;
+        right: 1055px;
     }
     .basket__item .minus {
         margin-left: 0px;
